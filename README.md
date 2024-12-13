@@ -1,9 +1,5 @@
 # Array Modifier Console App Using C
 
-## App Preview
-
-![Adsız tasarım (1)](https://github.com/user-attachments/assets/f460b2bf-88e9-46b4-aa11-7af0b7c3abf8)
-
 ## Description
 
 **The Array Modifier Console App** is a modular C project, which involves manipulate and analyze arrays that dynamically
@@ -17,6 +13,10 @@ performing basic statistical analyzes on arrays.
 * **C Language:** Functionality and manipulations.
 * **CMake:** Cross-platform build automation.
 * **Git:** Version control and collaboration.
+
+## App Preview
+
+![Adsız tasarım (1)](https://github.com/user-attachments/assets/f460b2bf-88e9-46b4-aa11-7af0b7c3abf8)
 
 ## How to Build and Run
 
