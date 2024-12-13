@@ -52,7 +52,7 @@ struct Array
 
 // Core Operations
 void Resize(struct Array *arr);
-void Display(struct Array *arr);
+void Display(const struct Array *arr);
 void Append(struct Array *arr, int num);
 void Insert(struct Array *arr, int index, int num);
 int Delete(struct Array *arr, int index);
