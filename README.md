@@ -4,7 +4,7 @@
 
 // images
 
-## Description:
+## Description
 
 **The Array Modifier Console App** is a modular C project, which involves manipulate and analyze arrays that dynamically
 allocated on the heap and additionally scaling the performance of each manipulation. Users can interact with the program
@@ -12,11 +12,11 @@ through a
 terminal, where they can perform various operations like displaying, searching, sorting, appending, and
 performing basic statistical analyzes on arrays.
 
-## What is Used:
+## What is Used
 
-**C Language:** Functionality and manipulations.
-**CMake:** Cross-platform build automation.
-**Git:** Version control and collaboration.
+* **C Language:** Functionality and manipulations.
+* **CMake:** Cross-platform build automation.
+* **Git:** Version control and collaboration.
 
 ## How to Build and Run
 
@@ -49,7 +49,7 @@ performing basic statistical analyzes on arrays.
    .\build\Debug\array_modifier_app.exe
    ```
 
-## Addable Features:
+## Addable Features
 
 * Expand functionality with more advanced Algorithms
 * Supporting for file-based input and output
