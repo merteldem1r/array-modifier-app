@@ -1,8 +1,7 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-struct Array
-{
+struct Array {
     int *A;
     int size;
     int length;
@@ -52,35 +51,53 @@ struct Array
 
 // Core Operations
 void Resize(struct Array *arr);
+
 void Display(const struct Array *arr);
-void Append(struct Array *arr, int num);
+
+void Append(struct Array *arr, const int num);
+
 void Insert(struct Array *arr, int index, int num);
+
 int Delete(struct Array *arr, int index);
-int Search(struct Array *arr, int key);
-int Get(struct Array *arr, int index);
-int Set(struct Array *arr, int index, int num);
+
+int Search(const struct Array *arr, int key);
+
+int Get(const struct Array *arr, int index);
+
+int Set(const struct Array *arr, int index, int num);
 
 // Search Operations
-int Max(struct Array *arr);
-int Min(struct Array *arr);
-int IsSorted(struct Array *arr);
+int Max(const struct Array *arr);
+
+int Min(const struct Array *arr);
+
+int IsSorted(const struct Array *arr);
 
 // Statistics Operations
-float Avg(struct Array *arr);
-int Sum(struct Array *arr);
+float Avg(const struct Array *arr);
+
+int Sum(const struct Array *arr);
 
 // Transformations
-void Reverse(struct Array *arr);
-void LeftShift(struct Array *arr);
-void RightShift(struct Array *arr);
-void Rotate(struct Array *arr, int k);
+void Reverse(const struct Array *arr);
+
+void LeftShift(const struct Array *arr);
+
+void RightShift(const struct Array *arr);
+
+void Rotate(const struct Array *arr, int k);
 
 // UTILS
 
 // void PerformanceTest(void (*func)(), const char *funcName);
 void displayOptions();
+
 void printConsoleMessage(int isSuccess, const char *message);
+
 void swap(int *x, int *y);
-void fillRandomNumbers(int A[], int length);
+
+void fillRandomNumbers(int A[], int arrLen);
+
+void fillSortedNumbers(int A[], int arrLen);
 
 #endif

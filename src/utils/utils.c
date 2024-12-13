@@ -17,8 +17,7 @@
 //     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, C_RESET, C_SECONDS, clockSeconds, C_RESET);
 // }
 
-void displayOptions()
-{
+void displayOptions() {
     printf("%s", C_OPTION);
     printf("\t1: Display\t6: Get\t\t11: Avg\t\t17: Is Sorted\n");
     printf("\t2: Append\t7: Set\t\t12: Reverse\n");
@@ -30,18 +29,14 @@ void displayOptions()
     printf("\n");
 }
 
-void printConsoleMessage(int isSuccess, const char *message)
-{
+void printConsoleMessage(const int isSuccess, const char *message) {
     const char *WORD = "";
     const char *COLOR = "";
 
-    if (isSuccess)
-    {
+    if (isSuccess) {
         WORD = "SUCCESS -> ";
         COLOR = C_SUCCESS;
-    }
-    else
-    {
+    } else {
         WORD = "ERROR -> ";
         COLOR = C_ERROR;
     }
@@ -49,17 +44,20 @@ void printConsoleMessage(int isSuccess, const char *message)
     printf("%s%s%s%s\n", COLOR, WORD, C_RESET, message);
 }
 
-void swap(int *x, int *y)
-{
+void swap(int *x, int *y) {
     int temp = *x;
     *x = *y;
     *y = temp;
 }
 
-void fillRandomNumbers(int A[], int arrLen)
-{
+void fillRandomNumbers(int A[], int arrLen) {
     srand(time(NULL));
 
     for (int i = 0; i < arrLen; ++i)
         A[i] = rand() % 100;
+}
+
+void fillSortedNumbers(int A[], int arrLen) {
+    for (int i = 0; i < arrLen; ++i)
+        A[i] = i + 1;
 }

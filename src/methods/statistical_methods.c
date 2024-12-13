@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include "../include/array.h"
 
-int Sum(struct Array *arr)
-{
+int Sum(const struct Array *arr) {
     int sum = 0;
 
     for (int i = 0; i < arr->length; ++i)
@@ -12,7 +11,6 @@ int Sum(struct Array *arr)
     return sum;
 }
 
-float Avg(struct Array *arr)
-{
-    return (float)Sum(arr) / arr->length;
+float Avg(const struct Array *arr) {
+    return (float) Sum(arr) / (float) arr->length;
 }

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include "../include/array.h"
 
-int Search(struct Array *arr, int key)
-{
+int Search(const struct Array *arr, int key) {
     /*
         Suggestions for Improving Linear Search:
             1. Transposition (moving element i-1 index on each search)
@@ -12,10 +11,8 @@ int Search(struct Array *arr, int key)
             4. Binary Search (has O(logn) time complexity for sorted elements)
      */
 
-    for (int i = 0; i < arr->length; ++i)
-    {
-        if (arr->A[i] == key)
-        {
+    for (int i = 0; i < arr->length; ++i) {
+        if (arr->A[i] == key) {
             return i;
         }
     }
@@ -23,18 +20,15 @@ int Search(struct Array *arr, int key)
     return -1;
 }
 
-int Max(struct Array *arr)
-{
-    if (arr->length == 0)
-    {
+int Max(const struct Array *arr) {
+    if (arr->length == 0) {
         printf("Error: Max number not found\n");
         return -1;
     }
 
     int max = INT_MIN;
 
-    for (int i = 0; i < arr->length; ++i)
-    {
+    for (int i = 0; i < arr->length; ++i) {
         if (arr->A[i] > max)
             max = arr->A[i];
     }
@@ -42,18 +36,15 @@ int Max(struct Array *arr)
     return max;
 }
 
-int Min(struct Array *arr)
-{
-    if (arr->length == 0)
-    {
+int Min(const struct Array *arr) {
+    if (arr->length == 0) {
         printf("Error: Min number not found\n");
         return -1;
     }
 
     int min = INT_MAX;
 
-    for (int i = 0; i < arr->length; ++i)
-    {
+    for (int i = 0; i < arr->length; ++i) {
         if (arr->A[i] < min)
             min = arr->A[i];
     }
@@ -61,11 +52,9 @@ int Min(struct Array *arr)
     return min;
 }
 
-int IsSorted(struct Array *arr)
-{
+int IsSorted(const struct Array *arr) {
     // non-descending order
-    for (int i = 0; i < arr->length - 1; ++i)
-    {
+    for (int i = 0; i < arr->length - 1; ++i) {
         if (arr->A[i] > arr->A[i + 1])
             return 0;
     }
