@@ -2,7 +2,7 @@
 
 ## App Preview
 
-// images
+![image](https://github.com/user-attachments/assets/47dea233-2f0b-4ced-82e1-ead7be0f4a68) ![image](https://github.com/user-attachments/assets/60d2baa2-70e0-43fb-ab1a-1f058d44b001)
 
 ## Description
 
