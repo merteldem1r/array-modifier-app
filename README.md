@@ -2,7 +2,7 @@
 
 ## App Preview
 
-![image](https://github.com/user-attachments/assets/47dea233-2f0b-4ced-82e1-ead7be0f4a68) ![image](https://github.com/user-attachments/assets/60d2baa2-70e0-43fb-ab1a-1f058d44b001)
+![Adsız tasarım (1)](https://github.com/user-attachments/assets/f460b2bf-88e9-46b4-aa11-7af0b7c3abf8)
 
 ## Description
 
