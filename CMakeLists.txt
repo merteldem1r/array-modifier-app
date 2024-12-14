@@ -15,6 +15,7 @@ set(SRC
         src/methods/search_methods.c
         src/methods/statistical_methods.c
         src/methods/transformation_methods.c
+        src/methods/sorting_methods.c
 )
 
 add_executable(${PROJECT_NAME} ${SRC})

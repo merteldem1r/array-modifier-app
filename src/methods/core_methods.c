@@ -18,7 +18,7 @@ void Resize(struct Array *arr) {
 
 void Display(const struct Array *arr) {
     const char *COLOR = C_DATA;
-    printf("%sArray:%s [ ", COLOR, C_RESET);
+    printf("%sArray:%s [ ", COLOR, P_RESET);
 
     if (arr->length > 10) {
         for (int i = 0; i < 5; ++i)
@@ -32,7 +32,7 @@ void Display(const struct Array *arr) {
         for (int i = 0; i < arr->length; ++i)
             printf("%d ", arr->A[i]);
     }
-    printf("] %sLength:%s %d", COLOR, C_RESET, arr->length);
+    printf("] %sLength:%s %d", COLOR, P_RESET, arr->length);
 }
 
 void Append(struct Array *arr, int num) {

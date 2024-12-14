@@ -25,13 +25,14 @@ struct Array {
 #define IS_SORTED 17
 #define EXIT 0
 
-// Colors
-#define C_RESET "\033[0m"
+// Text
+#define P_RESET "\033[0m"
 #define C_SUCCESS "\033[32m"
 #define C_ERROR "\033[31m"
 #define C_DATA "\033[96m"
 #define C_OPTION "\033[95m"
 #define C_SECONDS "\033[33m"
+#define T_UNDERLINE "\033[4m"
 
 #define PERFORMANCE_TEST(func, funcName)                      \
     do                                                        \
@@ -43,13 +44,13 @@ struct Array {
             (double)(endClock - startClock) / CLOCKS_PER_SEC; \
         printf(                                               \
             "Function %s%s%s took: %s%f%s seconds\n",         \
-            C_OPTION, funcName, C_RESET,                      \
-            C_SECONDS, clockSeconds, C_RESET);                \
+            C_OPTION, funcName, P_RESET,                      \
+            C_SECONDS, clockSeconds, P_RESET);                \
     } while (0)
 
 // METHODS
 
-// Core Operations
+// Core Methods
 void Resize(struct Array *arr);
 
 void Display(const struct Array *arr);
@@ -66,19 +67,19 @@ int Get(const struct Array *arr, int index);
 
 int Set(const struct Array *arr, int index, int num);
 
-// Search Operations
+// Search Methods
 int Max(const struct Array *arr);
 
 int Min(const struct Array *arr);
 
 int IsSorted(const struct Array *arr);
 
-// Statistics Operations
+// Statistics Methods
 float Avg(const struct Array *arr);
 
 int Sum(const struct Array *arr);
 
-// Transformations
+// Transformations Methods
 void Reverse(const struct Array *arr);
 
 void LeftShift(const struct Array *arr);
@@ -86,6 +87,9 @@ void LeftShift(const struct Array *arr);
 void RightShift(const struct Array *arr);
 
 void Rotate(const struct Array *arr, int k);
+
+// Sorting Methods
+void InsertionSort(int A[], int arrLen);
 
 // UTILS
 

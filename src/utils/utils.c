@@ -14,18 +14,39 @@
 //     endClock = clock();
 
 //     double clockSeconds = (double)(endClock - startClock) / CLOCKS_PER_SEC;
-//     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, C_RESET, C_SECONDS, clockSeconds, C_RESET);
+//     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, P_RESET, C_SECONDS, clockSeconds, P_RESET);
 // }
 
 void displayOptions() {
     printf("%s", C_OPTION);
-    printf("\t1: Display\t6: Get\t\t11: Avg\t\t17: Is Sorted\n");
-    printf("\t2: Append\t7: Set\t\t12: Reverse\n");
-    printf("\t3: Insert\t8: Max\t\t13: Left Shift\n");
-    printf("\t4: Delete\t9: Min\t\t14: Right Shift\n");
-    printf("\t5: Search\t10: Sum\t\t16: Rotate\n");
 
-    printf("\n\t0: Exit%s", C_RESET);
+    // Core
+    printf("\tCore Methods:\n");
+    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
+           "1: Display", "2: Append", "3: Insert", "4: Delete", "5: Get", "6: Set");
+
+    // Statistical
+    printf("\tStatistical Methods:\n");
+    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
+           "7: Sum", "8: Average", "9: [EMPTY]", "10: [EMPTY]", "11: [EMPTY]", "12: [EMPTY]");
+
+    // Transformation
+    printf("\tTransformation Methods:\n");
+    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
+           "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: [EMPTY]", "18: [EMPTY]");
+
+    // Search
+    printf("\tSearch Methods:\n");
+    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
+           "19: Search", "20: Max", "21: Min", "22: Is Sorted", "23: [EMPTY]", "24: [EMPTY]");
+
+    // Sorting
+    printf("\tSorting Methods:\n");
+    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
+           "25: Insertion Sort", "26: Merge Sort", "27: Quick Sort", "28: Count Sort", "29: [EMPTY]", "30: [EMPTY]");
+
+    // Exit
+    printf("\n\t\t%-15s%s", "0: Exit", P_RESET);
     printf("\n");
 }
 
@@ -41,7 +62,7 @@ void printConsoleMessage(const int isSuccess, const char *message) {
         COLOR = C_ERROR;
     }
 
-    printf("%s%s%s%s\n", COLOR, WORD, C_RESET, message);
+    printf("%s%s%s%s\n", COLOR, WORD, P_RESET, message);
 }
 
 void swap(int *x, int *y) {

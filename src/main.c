@@ -8,7 +8,7 @@ int main() {
     int arrLength;
 
     // Initialize Array on HEAP
-    printf("Enter size on HEAP for an array: ");
+    printf("Enter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
     scanf("%d", &arr.size);
 
     if (arr.size <= 0) {
@@ -19,7 +19,7 @@ int main() {
     arr.A = (int *) malloc(arr.size * sizeof(int));
     arr.length = 0;
 
-    printf("Enter length of an array: ");
+    printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
     scanf("%d", &arrLength);
 
     if (arrLength > arr.size) {
@@ -29,12 +29,13 @@ int main() {
     }
 
     int isFilled = 1;
-    printf("Do you want automatic filled array? 1: YES 0: NO -> ");
+    printf("Do you want %sautomatic%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
     scanf("%d", &isFilled);
 
     if (isFilled == 1) {
         int isRandom = 1;
-        printf("Do you want random or sorted array? 1: Random 0: Sorted -> ");
+        printf("Do you want %srandom%s or %ssorted%s array? 1: Random 0: Sorted -> ", T_UNDERLINE, P_RESET, T_UNDERLINE,
+               P_RESET);
         scanf("%d", &isRandom);
 
         if (isRandom == 1) {
@@ -56,9 +57,9 @@ int main() {
     arr.length = arrLength;
     Display(&arr);
 
-    // Manipulatios on created Array from console
+    // Manipulates on created Array from console
     while (1) {
-        printf("\nChoose Option on %sArray%s:  \n", C_DATA, C_RESET);
+        printf("\nChoose Option on %sArray%s:  \n", C_DATA, P_RESET);
         displayOptions();
 
         int option;
