@@ -31,7 +31,7 @@ struct Array {
 #define C_ERROR "\033[31m"
 #define C_DATA "\033[96m"
 #define C_OPTION "\033[95m"
-#define C_SECONDS "\033[33m"
+#define C_COMPLEXITY "\033[93m"
 #define T_UNDERLINE "\033[4m"
 
 #define PERFORMANCE_TEST(func, funcName)                      \
@@ -43,9 +43,9 @@ struct Array {
         double clockSeconds =                                 \
             (double)(endClock - startClock) / CLOCKS_PER_SEC; \
         printf(                                               \
-            "Function %s%s%s took: %s%f%s seconds\n",         \
+            "CPU Time for %s%s()%s: %s%f%s seconds\n",         \
             C_OPTION, funcName, P_RESET,                      \
-            C_SECONDS, clockSeconds, P_RESET);                \
+            C_COMPLEXITY, clockSeconds, P_RESET);                \
     } while (0)
 
 // METHODS
@@ -94,6 +94,8 @@ void InsertionSort(int A[], int arrLen);
 // UTILS
 
 // void PerformanceTest(void (*func)(), const char *funcName);
+char *memoryUsage(int bytes);
+
 void displayOptions();
 
 void printConsoleMessage(int isSuccess, const char *message);

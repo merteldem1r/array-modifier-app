@@ -16,17 +16,16 @@ int main() {
         return 1;
     }
 
-    arr.A = (int *) malloc(arr.size * sizeof(int));
-    arr.length = 0;
-
     printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
     scanf("%d", &arrLength);
 
     if (arrLength > arr.size) {
         printConsoleMessage(0, "Number of elements can not be greater than allocated array size");
-        free(arr.A);
         return 1;
     }
+
+    arr.A = (int *) malloc(arr.size * sizeof(int));
+    arr.length = arrLength;
 
     int isFilled = 1;
     printf("Do you want %sautomatic%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
@@ -54,7 +53,9 @@ int main() {
         return -1;
     }
 
-    arr.length = arrLength;
+    char *usedMemory = memoryUsage(arr.size * (int)sizeof(int));
+    printf("Memory used on Heap: %s\n", usedMemory);
+    free(usedMemory);
     Display(&arr);
 
     // Manipulates on created Array from console

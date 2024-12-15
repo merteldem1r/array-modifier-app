@@ -14,8 +14,29 @@
 //     endClock = clock();
 
 //     double clockSeconds = (double)(endClock - startClock) / CLOCKS_PER_SEC;
-//     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, P_RESET, C_SECONDS, clockSeconds, P_RESET);
+//     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, P_RESET, C_COMPLEXITY, clockSeconds, P_RESET);
 // }
+
+char *memoryUsage(int bytes) {
+    const int bufferLen = 15;
+    char *result = (char *) malloc(bufferLen * sizeof(char));
+    double size = (double) bytes;
+    char *sizeUnit;
+
+    if (size < 1024) {
+        sizeUnit = "B";
+    } else if (size < 1024 * 1024) {
+        size /= 1024;
+        sizeUnit = "KB";
+    } else {
+        size /= (1024 * 1024);
+        sizeUnit = "MB";
+    }
+
+    sprintf(result, "%s%.4f%s %s", C_COMPLEXITY, size, P_RESET, sizeUnit);
+
+    return result;
+}
 
 void displayOptions() {
     printf("%s", C_OPTION);
