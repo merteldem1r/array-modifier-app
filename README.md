@@ -47,7 +47,7 @@ performing basic statistical analyzes on arrays.
 
 4. Generate Build Files
 
-   Generate build files inside ./build directory using **CMake**. You can use the
+   Generate build files inside build directory using **CMake**. You can use the
    command line or an IDE such as CLion.
 
    **For command line** (choose generator like Ninja, Makefile, or others):
@@ -57,7 +57,8 @@ performing basic statistical analyzes on arrays.
    cmake -G "Unix Makefiles" ..  # For Makefile
    ```
 
-   Step assumes you have **CMake** installed. The .. points to the parent directory where the _CMakeLists.txt_ file is
+   Step assumes you have **CMake** and generator (Ninja, makefile etc.) installed. The .. points to the parent directory
+   where the _CMakeLists.txt_ file is
    located.
 
    For **IDE**: If you're using an IDE like **CLion**, simply open the project in the IDE. It will automatically detect
@@ -70,13 +71,13 @@ performing basic statistical analyzes on arrays.
    ```
    ninja
    ``` 
-   if you have Makefiles then: 
+   if you have Makefiles then:
    ```
    make
    ``` 
 
 6. Run the Application
-   
+
    After building the project, **.exe** file will be created inside of **build** directory.
 
    Run it from the terminal:
@@ -84,6 +85,14 @@ performing basic statistical analyzes on arrays.
    ```
    ./array-modifier-console-app
    ```
+
+   ### Clean the Build Directory
+
+   To delete the build files, navigate to build directory and run this command:
+
+      ```
+      cmake --build . --target clean_all
+      ```
 
 ## Addable Features
 
