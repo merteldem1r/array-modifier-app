@@ -16,37 +16,73 @@ performing basic statistical analyzes on arrays.
 
 ## App Preview
 
-![Adsız tasarım (1)](https://github.com/user-attachments/assets/f460b2bf-88e9-46b4-aa11-7af0b7c3abf8)
+// image
 
 ## How to Build and Run
 
-1. Clone the Repository:
+* **Build Systems**: While this guide uses Ninja as an example, you can choose any build system (e.g., Makefiles or
+  Visual
+  Studio). CMake makes it easy to adapt.
+* **IDEs**: If you are using an IDE like CLion, you can open the project directly in the IDE, and it will handle these
+  steps automatically.
+
+1. Prerequisites for Project
+
+   Install necessary build tools and compilers on your syste:
+    * C compiler: GCC, Clang, or MSVC, depending on your operating system.
+    * Cmake: Build automation tool. Download from [cmake/download](https://cmake.org/download/)
+
+2. Clone the Repository
    ```
    git clone https://github.com/your-username/array-modifier-app.git
    cd array-modifier-app
    ```
 
-2. Create and go to Build directory:
+3. Create and go to Build directory where CMakeLists.txt is located
+
    ```
    mkdir build
    cd build
    ```
 
-3. Run CMake to configure project:
+4. Generate Build Files
+
+   Generate build files inside ./build directory using **CMake**. You can use the
+   command line or an IDE such as CLion.
+
+   **For command line** (choose generator like Ninja, Makefile, or others):
+
    ```
-   cmake ..
+   cmake -G "Ninja" ..  # For Ninja
+   cmake -G "Unix Makefiles" ..  # For Makefile
    ```
 
-4. Build the Project:
-   ```
-   cmake --build .
-   ```
+   Step assumes you have **CMake** installed. The .. points to the parent directory where the _CMakeLists.txt_ file is
+   located.
 
-5. Run the executable manually: After the build is completed, navigate to the build directory and run the executable
-   directly. Executable file could be directly inside of build directory (like in CLion's CMake) or inside of Debug
-   folder. For example:
+   For **IDE**: If you're using an IDE like **CLion**, simply open the project in the IDE. It will automatically detect
+   the
+   _CMakeLists.txt_ and set up build directory and the project for you.
+
+5. Build the Project
+
+   After generating the build system, now you can build the application
    ```
-   .\build\Debug\array_modifier_app.exe
+   ninja
+   ``` 
+   if you have Makefiles then: 
+   ```
+   make
+   ``` 
+
+6. Run the Application
+   
+   After building the project, **.exe** file will be created inside of **build** directory.
+
+   Run it from the terminal:
+
+   ```
+   ./array-modifier-console-app
    ```
 
 ## Addable Features

@@ -18,7 +18,7 @@
 // }
 
 char *memoryUsage(int bytes) {
-    const int bufferLen = 15;
+    const int bufferLen = 20;
     char *result = (char *) malloc(bufferLen * sizeof(char));
     double size = (double) bytes;
     char *sizeUnit;
@@ -39,35 +39,34 @@ char *memoryUsage(int bytes) {
 }
 
 void displayOptions() {
-    printf("%s", C_OPTION);
-
     // Core
     printf("\tCore Methods:\n");
-    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
-           "1: Display", "2: Append", "3: Insert", "4: Delete", "5: Get", "6: Set");
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+           "1: Display", "2: Append", "3: Insert", "4: Delete", "5: Get", "6: Set", P_RESET);
 
     // Statistical
     printf("\tStatistical Methods:\n");
-    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
-           "7: Sum", "8: Average", "9: [EMPTY]", "10: [EMPTY]", "11: [EMPTY]", "12: [EMPTY]");
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+           "7: Sum", "8: Average", "9: [EMPTY]", "10: [EMPTY]", "11: [EMPTY]", "12: [EMPTY]", P_RESET);
 
     // Transformation
     printf("\tTransformation Methods:\n");
-    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
-           "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: [EMPTY]", "18: [EMPTY]");
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+           "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: [EMPTY]", "18: [EMPTY]", P_RESET);
 
     // Search
     printf("\tSearch Methods:\n");
-    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
-           "19: Search", "20: Max", "21: Min", "22: Is Sorted", "23: [EMPTY]", "24: [EMPTY]");
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+           "19: Search", "20: Max", "21: Min", "22: Is Sorted", "23: [EMPTY]", "24: [EMPTY]", P_RESET);
 
     // Sorting
     printf("\tSorting Methods:\n");
-    printf("    \t%-15s %-15s %-15s %-15s %-15s %-15s\n",
-           "25: Insertion Sort", "26: Merge Sort", "27: Quick Sort", "28: Count Sort", "29: [EMPTY]", "30: [EMPTY]");
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+           "25: Insertion Sort", "26: Merge Sort", "27: Quick Sort", "28: Count Sort", "29: [EMPTY]", "30: [EMPTY]",
+           P_RESET);
 
     // Exit
-    printf("\n\t\t%-15s%s", "0: Exit", P_RESET);
+    printf("\n\t\t%-18s%s", "0: Exit", P_RESET);
     printf("\n");
 }
 
