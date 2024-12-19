@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "../include/array.h"
 
 int Sum(const struct Array *arr) {

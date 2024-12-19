@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include "../include/array.h"
 
+void swap(int *x, int *y) {
+    const int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 // void PerformanceTest(void (*func)(), const char *funcName)
 // {
 //     clock_t startClock, endClock;
@@ -37,7 +43,7 @@ char *memoryUsage(int bytes) {
     return result;
 }
 
-int getIntegerInput(int min, int max) {
+int getIntInput(int min, int max) {
     char inputBuffer[100];
     const int inputBase = 10;
 
@@ -109,12 +115,6 @@ void printConsoleMessage(const int isSuccess, const char *message) {
     }
 
     printf("%s%s%s%s\n", COLOR, WORD, P_RESET, message);
-}
-
-void swap(int *x, int *y) {
-    int temp = *x;
-    *x = *y;
-    *y = temp;
 }
 
 void fillRandomNumbers(int A[], int arrLen) {
