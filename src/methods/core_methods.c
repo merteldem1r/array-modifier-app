@@ -68,13 +68,13 @@ void Insert(struct Array *arr, int index, int num) {
     ++arr->length;
 }
 
-int Delete(struct Array *arr, int index) {
+int Delete(struct Array *arr, int index, int *resPtr) {
     if (index < 0 || index >= arr->length) {
-        printf("\t\t** Error: Invalid index for Delete\n");
+        printConsoleMessage(0, "Invalid index for Delete");
         return -1;
     }
 
-    int x = arr->A[index];
+    const int x = arr->A[index];
 
     for (int i = index; i < arr->length - 1; ++i) {
         arr->A[i] = arr->A[i + 1];
@@ -83,23 +83,37 @@ int Delete(struct Array *arr, int index) {
     --arr->length;
     arr->A[arr->length] = 0;
 
+    if (resPtr != NULL)
+        *resPtr = x;
+
     return x;
 }
 
-int Get(const struct Array *arr, int index) {
+int Get(const struct Array *arr, int index, int *resPtr) {
     if (index < 0 || index >= arr->length) {
         printf("Error: Invalid index to Get\n");
         return -1;
     }
 
-    return arr->A[index];
+    const int val = arr->A[index];
+
+    if (resPtr != NULL)
+        *resPtr = val;
+
+    return val;
 }
 
-int Set(const struct Array *arr, int index, int num) {
+int Set(const struct Array *arr, int index, int num, int *resPtr) {
     if (index < 0 || index >= arr->length) {
         printf("Error: Invalid index to Set\n");
         return -1;
     }
 
-    return arr->A[index] = num;
+    arr->A[index] = num;
+    const int val = arr->A[index];
+
+    if (resPtr != NULL)
+        *resPtr = val;
+
+    return val;
 }

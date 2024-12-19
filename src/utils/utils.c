@@ -114,7 +114,7 @@ void printConsoleMessage(const int isSuccess, const char *message) {
         COLOR = C_ERROR;
     }
 
-    printf("%s%s%s%s\n", COLOR, WORD, P_RESET, message);
+    printf("%s%s%s%s", COLOR, WORD, P_RESET, message);
 }
 
 void fillRandomNumbers(int A[], int arrLen) {

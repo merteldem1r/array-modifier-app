@@ -7,23 +7,40 @@ struct Array {
     int length;
 };
 
+// METHODS
+
+// Core
 #define DISPLAY 1
 #define APPEND 2
 #define INSERT 3
 #define DELETE 4
-#define SEARCH 5
-#define GET 6
-#define SET 7
-#define MAX 8
-#define MIN 9
-#define SUM 10
-#define AVG 11
-#define REVERSE 12
-#define LEFT_SHIFT 13
-#define RIGHT_SHIFT 14
+#define GET 5
+#define SET 6
+
+// Statistical
+#define SUM 7
+#define AVG 8
+
+// Transformation
+#define REVERSE 13
+#define LEFT_SHIFT 14
+#define RIGHT_SHIFT 15
 #define ROTATE 16
-#define IS_SORTED 17
+
+// Search
+#define SEARCH 19
+#define MAX 20
+#define MIN 21
+#define IS_SORTED 22
+
+// Sorting
+#define INSERTION_SORT 25
+#define MERGE_SORT 26
+#define QUICK_SORT 27
+#define COUNT_SORT 28
+
 #define EXIT 0
+
 
 // Text
 #define P_RESET "\033[0m"
@@ -43,9 +60,9 @@ struct Array {
         double clockSeconds =                                 \
             (double)(endClock - startClock) / CLOCKS_PER_SEC; \
         printf(                                               \
-            "CPU Time for %s%s()%s: %s%f%s seconds\n",         \
+            "CPU Time for %s%s()%s: %s%f%s seconds\n",        \
             C_OPTION, funcName, P_RESET,                      \
-            C_COMPLEXITY, clockSeconds, P_RESET);                \
+            C_COMPLEXITY, clockSeconds, P_RESET);             \
     } while (0)
 
 // METHODS
@@ -59,25 +76,25 @@ void Append(struct Array *arr, const int num);
 
 void Insert(struct Array *arr, int index, int num);
 
-int Delete(struct Array *arr, int index);
+int Delete(struct Array *arr, int index, int *resPtr);
 
-int Search(const struct Array *arr, int key);
+int Search(const struct Array *arr, int key, int *resPtr);
 
-int Get(const struct Array *arr, int index);
+int Get(const struct Array *arr, int index, int *resPtr);
 
-int Set(const struct Array *arr, int index, int num);
+int Set(const struct Array *arr, int index, int num, int *resPtr);
 
 // Search Methods
-int Max(const struct Array *arr);
+int Max(const struct Array *arr, int *resPtr);
 
-int Min(const struct Array *arr);
+int Min(const struct Array *arr, int *resPtr);
 
-int IsSorted(const struct Array *arr);
+int IsSorted(const struct Array *arr, int *resPtr);
 
 // Statistics Methods
-float Avg(const struct Array *arr);
+float Avg(const struct Array *arr, float *resPtr);
 
-int Sum(const struct Array *arr);
+int Sum(const struct Array *arr, int *resPtr);
 
 // Transformations Methods
 void Reverse(const struct Array *arr);

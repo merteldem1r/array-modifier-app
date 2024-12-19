@@ -69,102 +69,136 @@ int main() {
                 break;
 
             case APPEND: {
-                printf("\tEnter number: ");
+                printf("Enter number: ");
                 const int num = getIntInput(INT_MIN, INT_MAX);
-                PERFORMANCE_TEST(Append(&arr, num), "APPEND");
+
+                PERFORMANCE_TEST(Append(&arr, num), "Appends");
                 break;
             }
             case INSERT: {
-                printf("\tEnter insert index: ");
+                printf("Enter insert index: ");
                 const int index = getIntInput(0, arr.length - 1);
 
-                printf("\tEnter number to insert: ");
+                printf("Enter number to insert: ");
                 const int num = getIntInput(INT_MIN, INT_MAX);
 
-                PERFORMANCE_TEST(Insert(&arr, index, num), "INSERT");
+                PERFORMANCE_TEST(Insert(&arr, index, num), "Insert");
                 break;
             }
             case DELETE: {
-                printf("\tEnter delete index: ");
+                printf("Enter delete index: ");
                 const int index = getIntInput(0, arr.length - 1);
+                int res = -1;
+
+                PERFORMANCE_TEST(Delete(&arr, index, &res), "Delete");
 
                 printConsoleMessage(1, "Deleted value: ");
-                printf("%d\n", Delete(&arr, index));
+                printf("%d", res);
+
                 break;
             }
             case SEARCH: {
-                printf("\tEnter num to search: ");
+                printf("Enter num to search: ");
                 const int key = getIntInput(INT_MIN, INT_MAX);
+                int res = -1;
+
+                PERFORMANCE_TEST(Search(&arr, key, &res), "Search");
+
                 printConsoleMessage(1, "Found num at index: ");
-                printf("%d\n", Search(&arr, key));
+                printf("%d", res);
+
                 break;
             }
             case GET: {
-                printf("\tEnter index to get: ");
+                printf("Enter index to get: ");
                 const int index = getIntInput(0, arr.length);
+                int res = -1;
+
+                PERFORMANCE_TEST(Get(&arr, index, &res), "Get");
                 printConsoleMessage(1, "Found num: ");
-                printf("%d\n", Get(&arr, index));
+                printf("%d", res);
                 break;
             }
             case SET: {
-                printf("\tEnter index to set: ");
+                printf("Enter index to set: ");
                 const int index = getIntInput(0, arr.length - 1);
 
-                printf("\tEnter number to set: ");
+                printf("Enter number to set: ");
                 const int num = getIntInput(INT_MIN, INT_MAX);
-                printConsoleMessage(1, "Number setted at index:");
-                printf("Num: %d\n Index: %d\n", Set(&arr, index, num), index);
+
+                int res = -1;
+
+                PERFORMANCE_TEST(Set(&arr, index, num, &res), "Set");
+
+                printConsoleMessage(1, "Number set ");
+                printf("At index: %d Number: %d", index, res);
+
                 break;
             }
             case MAX: {
-                printConsoleMessage(1, "Max found number:");
-                printf("%d\n", Max(&arr));
+                int res = 0;
+                PERFORMANCE_TEST(Max(&arr, &res), "Max");
+
+                printConsoleMessage(1, "Max found number: ");
+                printf("%d", res);
                 break;
             }
             case MIN: {
-                printConsoleMessage(1, "Min found number:");
-                printf("%d\n", Min(&arr));
+                int res = 0;
+                PERFORMANCE_TEST(Max(&arr, &res), "Min");
+
+                printConsoleMessage(1, "Min found number: ");
+                printf("%d", res);
                 break;
             }
             case SUM: {
+                int res = 0;
+                PERFORMANCE_TEST(Sum(&arr, &res), "Sum");
+
                 printConsoleMessage(1, "Sum of all elements:");
-                printf("%d\n", Sum(&arr));
+                printf("%d", res);
                 break;
             }
             case AVG: {
+                float res = 0;
+                PERFORMANCE_TEST(Avg(&arr, &res), "Avg");
+
                 printConsoleMessage(1, "Average of all elements:");
-                printf("%.2f\n", Avg(&arr));
+                printf("%.3f", res);
                 break;
             }
             case REVERSE: {
-                Reverse(&arr);
-                printConsoleMessage(1, "Elements reversed");
+                PERFORMANCE_TEST(Reverse(&arr), "Reverse");
+                printConsoleMessage(1, "Elements reversed\n");
                 Display(&arr);
                 break;
             }
             case LEFT_SHIFT: {
-                LeftShift(&arr);
-                printConsoleMessage(1, "Elements left shifted");
+                PERFORMANCE_TEST(LeftShift(&arr), "LeftShift");
+                printConsoleMessage(1, "Elements left shifted\n");
                 Display(&arr);
                 break;
             }
             case RIGHT_SHIFT: {
-                RightShift(&arr);
-                printConsoleMessage(1, "Elements right shifted");
+                PERFORMANCE_TEST(RightShift(&arr), "RightShift");
+                printConsoleMessage(1, "Elements right shifted\n");
                 Display(&arr);
                 break;
             }
             case ROTATE: {
-                printf("\tEnter non-negative Rotate step: ");
+                printf("Enter non-negative Rotate step: ");
                 const int k = getIntInput(0, INT_MAX);
 
-                PERFORMANCE_TEST(Rotate(&arr, k), "ROTATE");
-                printConsoleMessage(1, "Elements right rotated");
+                PERFORMANCE_TEST(Rotate(&arr, k), "Rotate");
+                printConsoleMessage(1, "Elements right rotated\n");
                 Display(&arr);
                 break;
             }
             case IS_SORTED: {
-                if (IsSorted(&arr))
+                int res = 0;
+                PERFORMANCE_TEST(IsSorted(&arr, &res), "IsSorted");
+
+                if (res)
                     printConsoleMessage(1, "Array is Sorted in non-descending order");
                 else
                     printConsoleMessage(1, "Array is NOT Sorted in non-descending order");
