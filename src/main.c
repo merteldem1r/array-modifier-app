@@ -8,7 +8,7 @@ int main() {
 
     // Initialize Array on HEAP
     printf("Enter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
-    arr.size = getInput(INT_MIN, INT_MAX);
+    arr.size = getIntegerInput(INT_MIN, INT_MAX);
 
     if (arr.size <= 0) {
         printConsoleMessage(0, "Array size must be positive");
@@ -16,7 +16,7 @@ int main() {
     }
 
     printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
-    arr.length = getInput(INT_MIN, INT_MAX);
+    arr.length = getIntegerInput(INT_MIN, INT_MAX);
 
     if (arr.length > arr.size) {
         printConsoleMessage(0, "Number of elements can not be greater than allocated size");
@@ -26,12 +26,12 @@ int main() {
     arr.A = (int *) malloc(arr.size * sizeof(int));
 
     printf("Do you want %sautomatic%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
-    const int isFilled = getInput(0, 1);
+    const int isFilled = getIntegerInput(0, 1);
 
     if (isFilled == 1) {
         printf("Do you want %srandom%s or %ssorted%s array? 1: Random 0: Sorted -> ", T_UNDERLINE, P_RESET, T_UNDERLINE,
                P_RESET);
-        const int isRandom = getInput(0, 1);
+        const int isRandom = getIntegerInput(0, 1);
 
         if (isRandom == 1) {
             PERFORMANCE_TEST(fillRandomNumbers(arr.A, arr.length), "fillRandomNumbers");
@@ -42,7 +42,7 @@ int main() {
         printf("Enter all elements: \n");
         for (int i = 0; i < arr.length; ++i) {
             printf("\tElement %d: ", i + 1);
-            arr.A[i] = getInput(INT_MIN, INT_MAX);
+            arr.A[i] = getIntegerInput(INT_MIN, INT_MAX);
         }
     } else {
         printConsoleMessage(0, "Invalid input passed");
@@ -54,14 +54,14 @@ int main() {
     free(usedMemory);
     Display(&arr);
 
-    // Manipulates on created Array from console
+    // Array Manipulations
     printf("\n");
     printf("\nChoose Option on %sArray%s:  \n", C_DATA, P_RESET);
     displayOptions();
 
     while (1) {
         printf("\n-> ");
-        const int option = getInput(0, 30);
+        const int option = getIntegerInput(0, 30);
 
         switch (option) {
             case DISPLAY:
@@ -70,23 +70,23 @@ int main() {
 
             case APPEND: {
                 printf("\tEnter number: ");
-                const int num = getInput(INT_MIN, INT_MAX);
+                const int num = getIntegerInput(INT_MIN, INT_MAX);
                 PERFORMANCE_TEST(Append(&arr, num), "APPEND");
                 break;
             }
             case INSERT: {
                 printf("\tEnter insert index: ");
-                const int index = getInput(0, arr.length - 1);
+                const int index = getIntegerInput(0, arr.length - 1);
 
                 printf("\tEnter number to insert: ");
-                const int num = getInput(INT_MIN, INT_MAX);
+                const int num = getIntegerInput(INT_MIN, INT_MAX);
 
                 PERFORMANCE_TEST(Insert(&arr, index, num), "INSERT");
                 break;
             }
             case DELETE: {
                 printf("\tEnter delete index: ");
-                const int index = getInput(0, arr.length - 1);
+                const int index = getIntegerInput(0, arr.length - 1);
 
                 printConsoleMessage(1, "Deleted value: ");
                 printf("%d\n", Delete(&arr, index));
@@ -94,24 +94,24 @@ int main() {
             }
             case SEARCH: {
                 printf("\tEnter num to search: ");
-                const int key = getInput(INT_MIN, INT_MAX);
+                const int key = getIntegerInput(INT_MIN, INT_MAX);
                 printConsoleMessage(1, "Found num at index: ");
                 printf("%d\n", Search(&arr, key));
                 break;
             }
             case GET: {
                 printf("\tEnter index to get: ");
-                const int index = getInput(0, arr.length);
+                const int index = getIntegerInput(0, arr.length);
                 printConsoleMessage(1, "Found num: ");
                 printf("%d\n", Get(&arr, index));
                 break;
             }
             case SET: {
                 printf("\tEnter index to set: ");
-                const int index = getInput(0, arr.length - 1);
+                const int index = getIntegerInput(0, arr.length - 1);
 
                 printf("\tEnter number to set: ");
-                const int num = getInput(INT_MIN, INT_MAX);
+                const int num = getIntegerInput(INT_MIN, INT_MAX);
                 printConsoleMessage(1, "Number setted at index:");
                 printf("Num: %d\n Index: %d\n", Set(&arr, index, num), index);
                 break;
@@ -156,7 +156,7 @@ int main() {
             }
             case ROTATE: {
                 printf("\tEnter non-negative Rotate step: ");
-                const int k = getInput(0, INT_MAX);
+                const int k = getIntegerInput(0, INT_MAX);
 
                 PERFORMANCE_TEST(Rotate(&arr, k), "ROTATE");
                 printConsoleMessage(1, "Elements right rotated");

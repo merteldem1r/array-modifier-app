@@ -95,7 +95,7 @@ void InsertionSort(int A[], int arrLen);
 
 // void PerformanceTest(void (*func)(), const char *funcName);
 
-int getInput(int min, int max);
+int getIntegerInput(int min, int max);
 
 char *memoryUsage(int bytes);
 

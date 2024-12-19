@@ -1,7 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 #include "../include/array.h"
 
 // void PerformanceTest(void (*func)(), const char *funcName)
@@ -38,7 +37,7 @@ char *memoryUsage(int bytes) {
     return result;
 }
 
-int getInput(int min, int max) {
+int getIntegerInput(int min, int max) {
     char inputBuffer[100];
     const int inputBase = 10;
 
