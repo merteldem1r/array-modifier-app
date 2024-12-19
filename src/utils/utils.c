@@ -38,6 +38,33 @@ char *memoryUsage(int bytes) {
     return result;
 }
 
+int getInput(int min, int max) {
+    char inputBuffer[100];
+    const int inputBase = 10;
+
+    const char *inputPtr = fgets(inputBuffer, sizeof(inputBuffer), stdin);
+
+    if (inputPtr == NULL) {
+        printConsoleMessage(0, "Invalid input received");
+        exit(1);
+    }
+
+    char *endPtr;
+    const long int input = strtol(inputBuffer, &endPtr, inputBase);
+
+    if (*endPtr != '\n' && *endPtr != '\0') {
+        printConsoleMessage(0, "Invalid input passed");
+        exit(1);
+    }
+
+    if (input < min || input > max) {
+        printConsoleMessage(0, "Input is out of the range");
+        exit(1);
+    }
+
+    return input;
+}
+
 void displayOptions() {
     // Core
     printf("\tCore Methods:\n");
@@ -66,7 +93,7 @@ void displayOptions() {
            P_RESET);
 
     // Exit
-    printf("\n\t\t%-18s%s", "0: Exit", P_RESET);
+    printf("\n\t%-18s%s", "0: Exit", P_RESET);
     printf("\n");
 }
 
