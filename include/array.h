@@ -32,10 +32,11 @@ struct Array {
 #define ROTATE 16
 
 // Search
-#define SEARCH 19
-#define MAX 20
-#define MIN 21
-#define IS_SORTED 22
+#define LINEAR_SEARCH 19
+#define BINARY_SEARCH 20
+#define MAX 21
+#define MIN 22
+#define IS_SORTED 23
 
 // Sorting
 #define INSERTION_SORT 25
@@ -81,7 +82,9 @@ void Insert(struct Array *arr, int index, int num);
 
 int Delete(struct Array *arr, int index, int *resPtr);
 
-int Search(const struct Array *arr, int key, int *resPtr);
+int LinearSearch(const struct Array *arr, int key, int *resPtr);
+
+int BinarySearch(const struct Array *arr, int key, int *resPtr);
 
 int Get(const struct Array *arr, int index, int *resPtr);
 

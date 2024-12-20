@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include "../include/array.h"
 
-int Search(const struct Array *arr, int key, int *resPtr) {
+int LinearSearch(const struct Array *arr, int key, int *resPtr) {
     /*
         Here is Suggestions for Improving Linear Search:
             1. Transposition (moving element i-1 index on each search)
             2. Mo to Front (moving element to 0 index)
             3. Two Pointer Approach (in cases when chance of key on the end is same as on beginning)
-            4. Binary Search (has O(logn) time complexity for sorted elements)
      */
     int foundIdx = -1;
 
@@ -17,6 +16,30 @@ int Search(const struct Array *arr, int key, int *resPtr) {
             foundIdx = i;
             break;
         }
+    }
+
+    if (resPtr != NULL)
+        *resPtr = foundIdx;
+
+    return foundIdx;
+}
+
+int BinarySearch(const struct Array *arr, int key, int *resPtr) {
+    int foundIdx = -1;
+    int low = 0, high = arr->length - 1;
+
+    while (low <= high) {
+        const int mid = low + (high - low) / 2;
+
+        if (arr->A[mid] == key) {
+            foundIdx = mid;
+            break;
+        }
+
+        if (arr->A[mid] < key)
+            low = mid + 1;
+        else
+            high = mid - 1;
     }
 
     if (resPtr != NULL)

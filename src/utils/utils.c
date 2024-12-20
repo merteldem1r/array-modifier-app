@@ -34,7 +34,7 @@ char *memoryUsage(int bytes) {
         size /= 1024;
         sizeUnit = "KB";
     } else {
-        size /= (1024 * 1024);
+        size /= 1024 * 1024;
         sizeUnit = "MB";
     }
 
@@ -89,7 +89,7 @@ void displayOptions() {
     // Search
     printf("\tSearch Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
-           "19: Search", "20: Max", "21: Min", "22: Is Sorted", "23: [EMPTY]", "24: [EMPTY]", P_RESET);
+           "19: Linear Search", "20: Binary Search", "21: Max", "22: Min", "23: Is Sorted", "24: [EMPTY]", P_RESET);
 
     // Sorting
     printf("\tSorting Methods:\n");

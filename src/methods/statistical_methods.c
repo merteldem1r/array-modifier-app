@@ -30,16 +30,12 @@ float Median(const struct Array *arr, float *resPtr) {
     float median = 0;
     const int mid = arr->length / 2;
 
-    if (!IsSorted(arr, NULL)) {
-        printConsoleMessage(0, "Array should be sorted for Median method\n");
-        median = NAN;
+    if (arr->length % 2 == 0) {
+        median = (float) (arr->A[mid - 1] + arr->A[mid]) / 2;
     } else {
-        if (arr->length % 2 == 0) {
-            median = (float) (arr->A[mid - 1] + arr->A[mid]) / 2;
-        } else {
-            median = (float) arr->A[mid];
-        }
+        median = (float) arr->A[mid];
     }
+
 
     if (resPtr != NULL)
         *resPtr = median;

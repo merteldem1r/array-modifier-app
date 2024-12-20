@@ -8,7 +8,7 @@ int main() {
     struct Array arr;
 
     // Initialize Array on HEAP
-    printf("Enter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
+    printf("\nEnter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
     arr.size = getIntInput(1, INT_MAX);
 
     printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
@@ -23,6 +23,7 @@ int main() {
         printf("Do you want %srandom%s or %ssorted%s array? 1: Random 0: Sorted -> ", T_UNDERLINE, P_RESET, T_UNDERLINE,
                P_RESET);
         const int isRandom = getIntInput(0, 1);
+        printf("\n");
 
         if (isRandom == 1) {
             PERFORMANCE_TEST(fillRandomNumbers(arr.A, arr.length), "fillRandomNumbers");
@@ -40,14 +41,15 @@ int main() {
         return -1;
     }
 
-    char *usedMemory = memoryUsage(arr.size * (int) sizeof(int));
-    printf("Memory used on Heap: %s\n", usedMemory);
-    free(usedMemory);
+    char *usedMemoryStr = memoryUsage(arr.size * (int) sizeof(int));
+    printf("Memory used on Heap: %s\n", usedMemoryStr);
+
+    free(usedMemoryStr);
     Display(&arr);
 
     // Array Manipulations
     printf("\n");
-    printf("\nChoose Option on %sArray%s:  \n", C_DATA, P_RESET);
+    printf("\nChoose %sOption%s on %sArray%s:\n\n", T_UNDERLINE, P_RESET, C_DATA, P_RESET);
     displayOptions();
 
     while (1) {
@@ -88,12 +90,29 @@ int main() {
 
                 break;
             }
-            case SEARCH: {
-                printf("Enter num to search: ");
+            case LINEAR_SEARCH: {
+                printf("Enter num to linear search: ");
                 const int key = getIntInput(INT_MIN, INT_MAX);
                 int res = -1;
 
-                PERFORMANCE_TEST(Search(&arr, key, &res), "Search");
+                PERFORMANCE_TEST(LinearSearch(&arr, key, &res), "LinearSearch");
+
+                printConsoleMessage(1, "Found num at index: ");
+                printf("%d", res);
+
+                break;
+            }
+            case BINARY_SEARCH: {
+                if (!IsSorted(&arr, NULL)) {
+                    printConsoleMessage(0, "Array should be sorted for Binary Search method\n");
+                    break;
+                }
+
+                printf("Enter num to binary search: ");
+                const int key = getIntInput(INT_MIN, INT_MAX);
+                int res = -1;
+
+                PERFORMANCE_TEST(BinarySearch(&arr, key, &res), "BinarySearch");
 
                 printConsoleMessage(1, "Found num at index: ");
                 printf("%d", res);
@@ -160,12 +179,16 @@ int main() {
             }
             case MEDIAN: {
                 float resPtr = NAN;
-                PERFORMANCE_TEST(Median(&arr, &resPtr), "Median");
 
-                if (!isnan(resPtr)) {
-                    printConsoleMessage(1, "Median of the array: ");
-                    printf("%.1f", resPtr);
+                if (!IsSorted(&arr, NULL)) {
+                    printConsoleMessage(0, "Array should be sorted for Median method\n");
+                    break;
                 }
+
+                PERFORMANCE_TEST(Median(&arr, &resPtr), "Median");
+                printConsoleMessage(1, "Median of the array: ");
+                printf("%.1f", resPtr);
+
                 break;
             }
             case MODE: {
