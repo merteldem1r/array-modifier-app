@@ -1,10 +1,11 @@
 #ifndef ARRAY_H
 #define ARRAY_H
+#include <stdint.h>
 
 struct Array {
     int *A;
-    int size;
-    int length;
+    int32_t size;
+    int32_t length;
 };
 
 // METHODS
@@ -126,7 +127,7 @@ void InsertionSort(int A[], size_t arrLen);
 
 // void PerformanceTest(void (*func)(), const char *funcName);
 
-int getIntInput(int min, int max);
+int32_t getIntInput(int min, int max);
 
 char *memoryUsage(int bytes);
 

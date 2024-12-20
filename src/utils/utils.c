@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -43,9 +44,9 @@ char *memoryUsage(int bytes) {
     return result;
 }
 
-int getIntInput(int min, int max) {
+int32_t getIntInput(int32_t min, int32_t max) {
     char inputBuffer[100];
-    const int inputBase = 10;
+    const int32_t inputBase = 10;
 
     const char *inputPtr = fgets(inputBuffer, sizeof(inputBuffer), stdin);
 
@@ -55,7 +56,7 @@ int getIntInput(int min, int max) {
     }
 
     char *endPtr;
-    const long int input = strtol(inputBuffer, &endPtr, inputBase);
+    const int64_t input = strtoll(inputBuffer, &endPtr, inputBase);
 
     if (*endPtr != '\n' && *endPtr != '\0') {
         printConsoleMessage(0, "Invalid input passed");
@@ -67,7 +68,7 @@ int getIntInput(int min, int max) {
         exit(1);
     }
 
-    return input;
+    return (int32_t) input;
 }
 
 void displayOptions() {

@@ -14,7 +14,7 @@ int main() {
     printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
     arr.length = getIntInput(1, arr.size);
 
-    arr.A = (int *) malloc(arr.size * sizeof(int));
+    arr.A = (int32_t *) malloc(arr.size * sizeof(int32_t));
 
     printf("Do you want %sautomatic%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
     const int isFilled = getIntInput(0, 1);
@@ -41,7 +41,8 @@ int main() {
         return -1;
     }
 
-    char *usedMemoryStr = memoryUsage(arr.size * (int) sizeof(int));
+    printf("arr.size %d", arr.size);
+    char *usedMemoryStr = memoryUsage(arr.size * (int32_t) sizeof(int32_t));
     printf("Memory used on Heap: %s\n", usedMemoryStr);
 
     free(usedMemoryStr);
