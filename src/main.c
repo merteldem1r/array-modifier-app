@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,20 +9,10 @@ int main() {
 
     // Initialize Array on HEAP
     printf("Enter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
-    arr.size = getIntInput(INT_MIN, INT_MAX);
-
-    if (arr.size <= 0) {
-        printConsoleMessage(0, "Array size must be positive");
-        return 1;
-    }
+    arr.size = getIntInput(1, INT_MAX);
 
     printf("Enter %slength%s of an array: ", T_UNDERLINE, P_RESET);
-    arr.length = getIntInput(INT_MIN, INT_MAX);
-
-    if (arr.length > arr.size) {
-        printConsoleMessage(0, "Number of elements can not be greater than allocated size");
-        return 1;
-    }
+    arr.length = getIntInput(1, arr.size);
 
     arr.A = (int *) malloc(arr.size * sizeof(int));
 
@@ -153,18 +144,49 @@ int main() {
             }
             case SUM: {
                 int res = 0;
-                PERFORMANCE_TEST(Sum(&arr, &res), "Sum");
+                PERFORMANCE_TEST(Sum(arr.A, arr.length, &res), "Sum");
 
-                printConsoleMessage(1, "Sum of all elements:");
+                printConsoleMessage(1, "Sum of all elements: ");
                 printf("%d", res);
                 break;
             }
-            case AVG: {
+            case MEAN: {
                 float res = 0;
-                PERFORMANCE_TEST(Avg(&arr, &res), "Avg");
+                PERFORMANCE_TEST(Mean(&arr, &res), "Mean");
 
-                printConsoleMessage(1, "Average of all elements:");
-                printf("%.3f", res);
+                printConsoleMessage(1, "Average of all elements: ");
+                printf("%.2f", res);
+                break;
+            }
+            case MEDIAN: {
+                float resPtr = NAN;
+                PERFORMANCE_TEST(Median(&arr, &resPtr), "Median");
+
+                if (!isnan(resPtr)) {
+                    printConsoleMessage(1, "Median of the array: ");
+                    printf("%.1f", resPtr);
+                }
+                break;
+            }
+            case MODE: {
+                break;
+            }
+            case VARIANCE: {
+                double resPtr = 0;
+                PERFORMANCE_TEST(Variance(&arr, &resPtr), "Variance");
+
+                printConsoleMessage(1, "Variance of the array: ");
+                printf("%.5f", resPtr);
+
+                break;
+            }
+            case STANDARD_DEVIATION: {
+                double resPtr = 0;
+                PERFORMANCE_TEST(StandardDeviation(&arr, &resPtr), "StandardDeviation");
+
+                printConsoleMessage(1, "Standard Deviation of the array: ");
+                printf("%.5f", resPtr);
+
                 break;
             }
             case REVERSE: {

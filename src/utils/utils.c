@@ -79,7 +79,7 @@ void displayOptions() {
     // Statistical
     printf("\tStatistical Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
-           "7: Sum", "8: Average", "9: [EMPTY]", "10: [EMPTY]", "11: [EMPTY]", "12: [EMPTY]", P_RESET);
+           "7: Sum", "8: Mean", "9: Median", "10: Mode", "11: Variance", "12: Standard Deviation", P_RESET);
 
     // Transformation
     printf("\tTransformation Methods:\n");
@@ -107,24 +107,24 @@ void printConsoleMessage(const int isSuccess, const char *message) {
     const char *COLOR = "";
 
     if (isSuccess) {
-        WORD = "SUCCESS -> ";
+        WORD = "SUCCESS ";
         COLOR = C_SUCCESS;
     } else {
-        WORD = "ERROR -> ";
+        WORD = "ERROR ";
         COLOR = C_ERROR;
     }
 
     printf("%s%s%s%s", COLOR, WORD, P_RESET, message);
 }
 
-void fillRandomNumbers(int A[], int arrLen) {
+void fillRandomNumbers(int A[], size_t arrLen) {
     srand(time(NULL));
 
     for (int i = 0; i < arrLen; ++i)
         A[i] = rand() % 100;
 }
 
-void fillSortedNumbers(int A[], int arrLen) {
+void fillSortedNumbers(int A[], size_t arrLen) {
     for (int i = 0; i < arrLen; ++i)
         A[i] = i + 1;
 }

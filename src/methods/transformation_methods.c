@@ -16,7 +16,7 @@ void LeftShift(const struct Array *arr) {
     arr->A[arr->length - 1] = 0;
 
     for (int i = arr->length - 2; i >= 0; --i) {
-        int temp = arr->A[i];
+        const int temp = arr->A[i];
         arr->A[i] = prev;
         prev = temp;
     }
@@ -27,7 +27,7 @@ void RightShift(const struct Array *arr) {
     arr->A[0] = 0;
 
     for (int i = 1; i < arr->length; ++i) {
-        int temp = arr->A[i];
+        const int temp = arr->A[i];
         arr->A[i] = prev;
         prev = temp;
     }
@@ -50,7 +50,7 @@ void Rotate(const struct Array *arr, int k) {
         return;
     }
 
-    const int arrLen = arr->length;
+    const size_t arrLen = arr->length;
     int *temp = (int *) malloc(arrLen * sizeof(int));
 
     for (int i = 0; i < arrLen; ++i)

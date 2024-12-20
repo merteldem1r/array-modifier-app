@@ -19,7 +19,11 @@ struct Array {
 
 // Statistical
 #define SUM 7
-#define AVG 8
+#define MEAN 8
+#define MEDIAN 9
+#define MODE 10
+#define VARIANCE 11
+#define STANDARD_DEVIATION 12
 
 // Transformation
 #define REVERSE 13
@@ -40,7 +44,6 @@ struct Array {
 #define COUNT_SORT 28
 
 #define EXIT 0
-
 
 // Text
 #define P_RESET "\033[0m"
@@ -92,9 +95,17 @@ int Min(const struct Array *arr, int *resPtr);
 int IsSorted(const struct Array *arr, int *resPtr);
 
 // Statistics Methods
-float Avg(const struct Array *arr, float *resPtr);
+float Mean(const struct Array *arr, float *resPtr);
 
-int Sum(const struct Array *arr, int *resPtr);
+int Sum(const int A[], size_t arrLen, int *resPtr);
+
+float Median(const struct Array *arr, float *resPtr);
+
+int Mode(const struct Array *arr, int *resPtr);
+
+double Variance(const struct Array *arr, double *resPtr);
+
+double StandardDeviation(const struct Array *arr, double *resPtr);
 
 // Transformations Methods
 void Reverse(const struct Array *arr);
@@ -106,7 +117,7 @@ void RightShift(const struct Array *arr);
 void Rotate(const struct Array *arr, int k);
 
 // Sorting Methods
-void InsertionSort(int A[], int arrLen);
+void InsertionSort(int A[], size_t arrLen);
 
 // UTILS
 
@@ -122,8 +133,8 @@ void printConsoleMessage(int isSuccess, const char *message);
 
 void swap(int *x, int *y);
 
-void fillRandomNumbers(int A[], int arrLen);
+void fillRandomNumbers(int A[], size_t arrLen);
 
-void fillSortedNumbers(int A[], int arrLen);
+void fillSortedNumbers(int A[], size_t arrLen);
 
 #endif

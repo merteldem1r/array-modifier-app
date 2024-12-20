@@ -1,4 +1,6 @@
-void InsertionSort(int A[], int arrLen) {
+#include <stddef.h>
+
+void InsertionSort(int A[], size_t arrLen) {
     for (int i = 1; i < arrLen; i++) {
         const int key = A[i];
         int j = i - 1;
