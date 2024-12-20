@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdint.h>
 #include <time.h>
 #include <stdlib.h>
@@ -23,7 +24,7 @@ void swap(int *x, int *y) {
 //     printf("Function %s%c%s took: %s%f%s sec", C_OPTION, funcName, P_RESET, C_COMPLEXITY, clockSeconds, P_RESET);
 // }
 
-char *memoryUsage(int bytes) {
+char *memoryUsage(uint64_t bytes) {
     const int bufferLen = 20;
     char *result = (char *) malloc(bufferLen * sizeof(char));
     double size = (double) bytes;
@@ -31,13 +32,17 @@ char *memoryUsage(int bytes) {
 
     if (size < 1024) {
         sizeUnit = "B";
-    } else if (size < 1024 * 1024) {
+    } else if (size < pow(1024, 2)) {
         size /= 1024;
         sizeUnit = "KB";
-    } else {
-        size /= 1024 * 1024;
+    } else if (size < pow(1024, 3)) {
+        size /= pow(1024, 2);
         sizeUnit = "MB";
+    } else {
+        size /= pow(1024, 3);
+        sizeUnit = "GB";
     }
+
 
     sprintf(result, "%s%.4f%s %s", C_COMPLEXITY, size, P_RESET, sizeUnit);
 

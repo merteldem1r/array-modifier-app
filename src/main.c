@@ -41,8 +41,8 @@ int main() {
         return -1;
     }
 
-    printf("arr.size %d", arr.size);
-    char *usedMemoryStr = memoryUsage(arr.size * (int32_t) sizeof(int32_t));
+    uint64_t memoryUsageBytes = arr.size * sizeof(int32_t);
+    char *usedMemoryStr = memoryUsage(memoryUsageBytes);
     printf("Memory used on Heap: %s\n", usedMemoryStr);
 
     free(usedMemoryStr);

@@ -129,7 +129,7 @@ void InsertionSort(int A[], size_t arrLen);
 
 int32_t getIntInput(int min, int max);
 
-char *memoryUsage(int bytes);
+char *memoryUsage(uint64_t bytes);
 
 void displayOptions();
 
