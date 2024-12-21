@@ -30,12 +30,19 @@
 
 // Utils
 int32_t getIntInput(int min, int max);
+
 char *memoryUsage(uint64_t bytes);
+
 void displayOptions();
+
 void printConsoleMessage(int isSuccess, const char *message);
+
 void displayCurrentTime();
+
 void swap(int *x, int *y);
+
 void fillRandomNumbers(int A[], size_t arrLen);
+
 void fillSortedNumbers(int A[], size_t arrLen);
 
 

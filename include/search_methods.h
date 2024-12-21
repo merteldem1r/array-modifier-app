@@ -13,8 +13,14 @@
 #define IS_SORTED 23
 
 // Search Methods
+int LinearSearch(const struct Array *arr, int key, int *resPtr);
+
+int BinarySearch(const struct Array *arr, int key, int *resPtr);
+
 int Max(const struct Array *arr, int *resPtr);
+
 int Min(const struct Array *arr, int *resPtr);
+
 int IsSorted(const struct Array *arr, int *resPtr);
 
 #endif //SEARCH_METHODS_H

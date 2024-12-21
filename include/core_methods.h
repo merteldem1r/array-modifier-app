@@ -15,13 +15,17 @@
 
 // Core Methods
 void Resize(struct Array *arr);
+
 void Display(const struct Array *arr);
+
 void Append(struct Array *arr, const int num);
+
 void Insert(struct Array *arr, int index, int num);
+
 int Delete(struct Array *arr, int index, int *resPtr);
-int LinearSearch(const struct Array *arr, int key, int *resPtr);
-int BinarySearch(const struct Array *arr, int key, int *resPtr);
+
 int Get(const struct Array *arr, int index, int *resPtr);
+
 int Set(const struct Array *arr, int index, int num, int *resPtr);
 
 #endif //CORE_METHODS_H

@@ -35,13 +35,8 @@ void RightShift(const struct Array *arr) {
     }
 }
 
-void Rotate(const struct Array *arr, int k) {
+void Rotate(const struct Array *arr, uint32_t k) {
     // rotate the array to the right by k steps.
-
-    if (k < 0) {
-        printf("\t\t** Error: Invalid negative step for Rotate\n");
-        return;
-    }
 
     if (arr->length == 1 || k == 0 || k % arr->length == 0)
         return;

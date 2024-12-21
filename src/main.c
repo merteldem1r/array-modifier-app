@@ -8,7 +8,6 @@
 #include "../include/search_methods.h"
 #include "../include/statistical_methods.h"
 #include "../include/transformation_methods.h"
-#include "../include/sorting_methods.h"
 #include "../include/utils.h"
 
 int main() {

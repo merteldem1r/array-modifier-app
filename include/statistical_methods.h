@@ -15,10 +15,15 @@
 
 // Statistical Methods
 double Mean(const struct Array *arr, double *resPtr);
+
 int64_t Sum(const int A[], size_t arrLen, int64_t *resPtr);
+
 double Median(const struct Array *arr, double *resPtr);
+
 int Mode(const struct Array *arr, int *resPtr);
+
 double Variance(const struct Array *arr, double *resPtr);
+
 double StandardDeviation(const struct Array *arr, double *resPtr);
 
 #endif //STATISTICAL_METHODS_H

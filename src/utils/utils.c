@@ -110,8 +110,8 @@ void displayOptions() {
 }
 
 void printConsoleMessage(const int isSuccess, const char *message) {
-    const char *WORD = "";
-    const char *COLOR = "";
+    const char *WORD;
+    const char *COLOR;
 
     if (isSuccess) {
         WORD = "SUCCESS ";

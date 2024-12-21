@@ -12,8 +12,11 @@
 
 // Transformations Methods
 void Reverse(const struct Array *arr);
+
 void LeftShift(const struct Array *arr);
+
 void RightShift(const struct Array *arr);
+
 void Rotate(const struct Array *arr, int k);
 
 
