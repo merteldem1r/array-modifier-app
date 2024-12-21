@@ -3,7 +3,8 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/array.h"
+
+#include "../include/utils.h"
 
 void swap(int *x, int *y) {
     const int temp = *x;
@@ -25,7 +26,7 @@ void swap(int *x, int *y) {
 // }
 
 char *memoryUsage(uint64_t bytes) {
-    const int bufferLen = 20;
+    const int bufferLen = 30;
     char *result = (char *) malloc(bufferLen * sizeof(char));
     double size = (double) bytes;
     char *sizeUnit;
@@ -44,7 +45,7 @@ char *memoryUsage(uint64_t bytes) {
     }
 
 
-    sprintf(result, "%s%.4f%s %s", C_COMPLEXITY, size, P_RESET, sizeUnit);
+    sprintf(result, "%s%.3f%s %s", C_COMPLEXITY, size, P_RESET, sizeUnit);
 
     return result;
 }
@@ -79,27 +80,27 @@ int32_t getIntInput(int32_t min, int32_t max) {
 void displayOptions() {
     // Core
     printf("\tCore Methods:\n");
-    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
            "1: Display", "2: Append", "3: Insert", "4: Delete", "5: Get", "6: Set", P_RESET);
 
     // Statistical
     printf("\tStatistical Methods:\n");
-    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
            "7: Sum", "8: Mean", "9: Median", "10: Mode", "11: Variance", "12: Standard Deviation", P_RESET);
 
     // Transformation
     printf("\tTransformation Methods:\n");
-    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
            "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: [EMPTY]", "18: [EMPTY]", P_RESET);
 
     // Search
     printf("\tSearch Methods:\n");
-    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
            "19: Linear Search", "20: Binary Search", "21: Max", "22: Min", "23: Is Sorted", "24: [EMPTY]", P_RESET);
 
     // Sorting
     printf("\tSorting Methods:\n");
-    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n",C_OPTION,
+    printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
            "25: Insertion Sort", "26: Merge Sort", "27: Quick Sort", "28: Count Sort", "29: [EMPTY]", "30: [EMPTY]",
            P_RESET);
 
@@ -121,6 +122,17 @@ void printConsoleMessage(const int isSuccess, const char *message) {
     }
 
     printf("%s%s%s%s", COLOR, WORD, P_RESET, message);
+}
+
+void displayCurrentTime() {
+    time_t rawTime;
+    time(&rawTime);
+    const struct tm *timeInfo = localtime(&rawTime);
+
+    char formatBuffer[9];
+    strftime(formatBuffer, sizeof(formatBuffer), "%I:%M %p", timeInfo);
+
+    printf("Time: %s\n", formatBuffer);
 }
 
 void fillRandomNumbers(int A[], size_t arrLen) {

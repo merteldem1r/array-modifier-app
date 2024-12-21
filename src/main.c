@@ -2,7 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #include "../include/array.h"
+#include "../include/core_methods.h"
+#include "../include/search_methods.h"
+#include "../include/statistical_methods.h"
+#include "../include/transformation_methods.h"
+#include "../include/sorting_methods.h"
+#include "../include/utils.h"
 
 int main() {
     struct Array arr;
@@ -163,15 +170,15 @@ int main() {
                 break;
             }
             case SUM: {
-                int res = 0;
+                int64_t res = 0;
                 PERFORMANCE_TEST(Sum(arr.A, arr.length, &res), "Sum");
 
                 printConsoleMessage(1, "Sum of all elements: ");
-                printf("%d", res);
+                printf("%lld", res);
                 break;
             }
             case MEAN: {
-                float res = 0;
+                double res = 0;
                 PERFORMANCE_TEST(Mean(&arr, &res), "Mean");
 
                 printConsoleMessage(1, "Average of all elements: ");
@@ -179,7 +186,7 @@ int main() {
                 break;
             }
             case MEDIAN: {
-                float resPtr = NAN;
+                double resPtr = NAN;
 
                 if (!IsSorted(&arr, NULL)) {
                     printConsoleMessage(0, "Array should be sorted for Median method\n");
@@ -251,7 +258,7 @@ int main() {
                 break;
             }
 
-            case EXIT:
+            case 0:
                 free(arr.A);
                 arr.A = NULL;
                 exit(1);

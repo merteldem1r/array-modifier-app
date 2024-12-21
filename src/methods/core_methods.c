@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "../include/array.h"
+#include "../include/core_methods.h"
+#include "../include/utils.h"
 
 // Optional: Resizing for dynamic array implementation
 void Resize(struct Array *arr) {

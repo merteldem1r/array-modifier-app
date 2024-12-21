@@ -1,11 +1,11 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 
 #include "../include/array.h"
+#include "../include/statistical_methods.h"
 
-int Sum(const int A[], size_t arrLen, int *resPtr) {
+int64_t Sum(const int A[], size_t arrLen, int64_t *resPtr) {
     int sum = 0;
 
     for (int i = 0; i < arrLen; ++i)
@@ -17,8 +17,9 @@ int Sum(const int A[], size_t arrLen, int *resPtr) {
     return sum;
 }
 
-float Mean(const struct Array *arr, float *resPtr) {
-    const float mean = (float) Sum(arr->A, arr->length, NULL) / (float) arr->length;
+double Mean(const struct Array *arr, double *resPtr) {
+    const double
+            mean = (double) Sum(arr->A, arr->length, NULL) / (float) arr->length;
 
     if (resPtr != NULL)
         *resPtr = mean;
@@ -26,7 +27,7 @@ float Mean(const struct Array *arr, float *resPtr) {
     return mean;
 }
 
-float Median(const struct Array *arr, float *resPtr) {
+double Median(const struct Array *arr, double *resPtr) {
     float median = 0;
     const int mid = arr->length / 2;
 
@@ -59,7 +60,7 @@ float Median(const struct Array *arr, float *resPtr) {
 
 double Variance(const struct Array *arr, double *resPtr) {
     double variance = 0;
-    const float mean = Mean(arr, NULL);
+    const double mean = Mean(arr, NULL);
 
     double squaredDiffSum = 0;
 
