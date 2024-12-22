@@ -33,9 +33,11 @@ int32_t getIntInput(int min, int max);
 
 char *memoryUsage(uint64_t bytes);
 
-void displayOptions();
+void displayOperations();
 
 void printConsoleMessage(int isSuccess, const char *message);
+
+void printOperation(const char* operation);
 
 void displayCurrentTime();
 

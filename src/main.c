@@ -55,9 +55,8 @@ int main() {
     Display(&arr);
 
     // Array Manipulations
-    printf("\n");
-    printf("\nChoose %sOption%s on %sArray%s:\n\n", T_UNDERLINE, P_RESET, C_DATA, P_RESET);
-    displayOptions();
+    printf("\nChoose %sOperation%s on %sArray%s:\n\n", T_UNDERLINE, P_RESET, C_DATA, P_RESET);
+    displayOperations();
 
     while (1) {
         printf("\n-> ");
@@ -65,82 +64,107 @@ int main() {
 
         switch (option) {
             case DISPLAY:
+                printOperation("Display");
+                displayCurrentTime();
+
                 Display(&arr);
                 break;
 
             case APPEND: {
-                printf("Enter number: ");
-                const int num = getIntInput(INT_MIN, INT_MAX);
+                printOperation("Append");
+                displayCurrentTime();
 
-                PERFORMANCE_TEST(Append(&arr, num), "Appends");
+                printf("-> Enter number: ");
+                const int num = getIntInput(INT_MIN, INT_MAX);
+                PERFORMANCE_TEST(Append(&arr, num), "Append");
+                Display(&arr);
                 break;
             }
             case INSERT: {
-                printf("Enter insert index: ");
+                printOperation("Insert");
+                displayCurrentTime();
+
+                printf("-> Enter insert index: ");
                 const int index = getIntInput(0, arr.length - 1);
 
-                printf("Enter number to insert: ");
+                printf("-> Enter number to insert: ");
                 const int num = getIntInput(INT_MIN, INT_MAX);
 
                 PERFORMANCE_TEST(Insert(&arr, index, num), "Insert");
+                Display(&arr);
                 break;
             }
             case DELETE: {
-                printf("Enter delete index: ");
+                printOperation("Delete");
+                displayCurrentTime();
+
+                printf("-> Enter delete index: ");
                 const int index = getIntInput(0, arr.length - 1);
                 int res = -1;
 
                 PERFORMANCE_TEST(Delete(&arr, index, &res), "Delete");
 
                 printConsoleMessage(1, "Deleted value: ");
-                printf("%d", res);
+                printf("%d\n", res);
 
                 break;
             }
             case LINEAR_SEARCH: {
-                printf("Enter num to linear search: ");
+                printOperation("Linear Search");
+                displayCurrentTime();
+
+                printf("-> Enter num to linear search: ");
                 const int key = getIntInput(INT_MIN, INT_MAX);
                 int res = -1;
 
                 PERFORMANCE_TEST(LinearSearch(&arr, key, &res), "LinearSearch");
 
                 printConsoleMessage(1, "Found num at index: ");
-                printf("%d", res);
+                printf("%d\n", res);
 
                 break;
             }
             case BINARY_SEARCH: {
+                printOperation("Binary Search");
+                displayCurrentTime();
+
                 if (!IsSorted(&arr, NULL)) {
                     printConsoleMessage(0, "Array should be sorted for Binary Search method\n");
                     break;
                 }
 
-                printf("Enter num to binary search: ");
+                printf("-> Enter num to binary search: ");
                 const int key = getIntInput(INT_MIN, INT_MAX);
                 int res = -1;
 
                 PERFORMANCE_TEST(BinarySearch(&arr, key, &res), "BinarySearch");
 
                 printConsoleMessage(1, "Found num at index: ");
-                printf("%d", res);
+                printf("%d\n", res);
 
                 break;
             }
             case GET: {
-                printf("Enter index to get: ");
+                printOperation("Get");
+                displayCurrentTime();
+
+                printf("-> Enter index to get: ");
                 const int index = getIntInput(0, arr.length);
                 int res = -1;
 
                 PERFORMANCE_TEST(Get(&arr, index, &res), "Get");
                 printConsoleMessage(1, "Found num: ");
-                printf("%d", res);
+                printf("%d\n", res);
                 break;
             }
             case SET: {
-                printf("Enter index to set: ");
+                printOperation("Set");
+                displayCurrentTime();
+
+                printf("-> Enter index to set: ");
                 const int index = getIntInput(0, arr.length - 1);
 
-                printf("Enter number to set: ");
+                printf("-> Enter number to set: ");
                 const int num = getIntInput(INT_MIN, INT_MAX);
 
                 int res = -1;
@@ -148,43 +172,58 @@ int main() {
                 PERFORMANCE_TEST(Set(&arr, index, num, &res), "Set");
 
                 printConsoleMessage(1, "Number set ");
-                printf("At index: %d Number: %d", index, res);
+                printf("Index: %d Number: %d\n", index, res);
 
                 break;
             }
             case MAX: {
+                printOperation("Max");
+                displayCurrentTime();
+
                 int res = 0;
                 PERFORMANCE_TEST(Max(&arr, &res), "Max");
 
                 printConsoleMessage(1, "Max found number: ");
-                printf("%d", res);
+                printf("%d\n", res);
                 break;
             }
             case MIN: {
+                printOperation("Min");
+                displayCurrentTime();
+
                 int res = 0;
                 PERFORMANCE_TEST(Max(&arr, &res), "Min");
 
                 printConsoleMessage(1, "Min found number: ");
-                printf("%d", res);
+                printf("%d\n", res);
                 break;
             }
             case SUM: {
+                printOperation("Sum");
+                displayCurrentTime();
+
                 int64_t res = 0;
                 PERFORMANCE_TEST(Sum(arr.A, arr.length, &res), "Sum");
 
                 printConsoleMessage(1, "Sum of all elements: ");
-                printf("%lld", res);
+                printf("%lld\n", res);
                 break;
             }
             case MEAN: {
+                printOperation("Mean");
+                displayCurrentTime();
+
                 double res = 0;
                 PERFORMANCE_TEST(Mean(&arr, &res), "Mean");
 
                 printConsoleMessage(1, "Average of all elements: ");
-                printf("%.2f", res);
+                printf("%.2f\n", res);
                 break;
             }
             case MEDIAN: {
+                printOperation("Median");
+                displayCurrentTime();
+
                 double resPtr = NAN;
 
                 if (!IsSorted(&arr, NULL)) {
@@ -194,51 +233,72 @@ int main() {
 
                 PERFORMANCE_TEST(Median(&arr, &resPtr), "Median");
                 printConsoleMessage(1, "Median of the array: ");
-                printf("%.1f", resPtr);
+                printf("%.1f\n", resPtr);
 
                 break;
             }
             case MODE: {
+                printOperation("Mode");
+                displayCurrentTime();
+
                 break;
             }
             case VARIANCE: {
+                printOperation("Variance");
+                displayCurrentTime();
+
                 double resPtr = 0;
                 PERFORMANCE_TEST(Variance(&arr, &resPtr), "Variance");
 
                 printConsoleMessage(1, "Variance of the array: ");
-                printf("%.5f", resPtr);
+                printf("%.5f\n", resPtr);
 
                 break;
             }
             case STANDARD_DEVIATION: {
+                printOperation("Standard Deviation");
+                displayCurrentTime();
+
                 double resPtr = 0;
                 PERFORMANCE_TEST(StandardDeviation(&arr, &resPtr), "StandardDeviation");
 
                 printConsoleMessage(1, "Standard Deviation of the array: ");
-                printf("%.5f", resPtr);
+                printf("%.5f\n", resPtr);
 
                 break;
             }
             case REVERSE: {
+                printOperation("Reverse");
+                displayCurrentTime();
+
                 PERFORMANCE_TEST(Reverse(&arr), "Reverse");
                 printConsoleMessage(1, "Elements reversed\n");
                 Display(&arr);
                 break;
             }
             case LEFT_SHIFT: {
+                printOperation("Lest Shift");
+                displayCurrentTime();
+
                 PERFORMANCE_TEST(LeftShift(&arr), "LeftShift");
                 printConsoleMessage(1, "Elements left shifted\n");
                 Display(&arr);
                 break;
             }
             case RIGHT_SHIFT: {
+                printOperation("Right Shift");
+                displayCurrentTime();
+
                 PERFORMANCE_TEST(RightShift(&arr), "RightShift");
                 printConsoleMessage(1, "Elements right shifted\n");
                 Display(&arr);
                 break;
             }
             case ROTATE: {
-                printf("Enter non-negative Rotate step: ");
+                printOperation("Rotate");
+                displayCurrentTime();
+
+                printf("-> Enter non-negative Rotate step: ");
                 const int k = getIntInput(0, INT_MAX);
 
                 PERFORMANCE_TEST(Rotate(&arr, k), "Rotate");
@@ -247,6 +307,9 @@ int main() {
                 break;
             }
             case IS_SORTED: {
+                printOperation("Is Sorted");
+                displayCurrentTime();
+
                 int res = 0;
                 PERFORMANCE_TEST(IsSorted(&arr, &res), "IsSorted");
 

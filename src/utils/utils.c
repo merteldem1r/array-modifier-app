@@ -77,7 +77,7 @@ int32_t getIntInput(int32_t min, int32_t max) {
     return (int32_t) input;
 }
 
-void displayOptions() {
+void displayOperations() {
     // Core
     printf("\tCore Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
@@ -124,19 +124,23 @@ void printConsoleMessage(const int isSuccess, const char *message) {
     printf("%s%s%s%s", COLOR, WORD, P_RESET, message);
 }
 
+void printOperation(const char *operation) {
+    printf("%sOperation%s: %s%s%s \n", T_UNDERLINE, P_RESET, C_OPTION, operation, P_RESET);
+}
+
 void displayCurrentTime() {
     time_t rawTime;
     time(&rawTime);
     const struct tm *timeInfo = localtime(&rawTime);
 
-    char formatBuffer[9];
-    strftime(formatBuffer, sizeof(formatBuffer), "%I:%M %p", timeInfo);
+    char formatBuffer[12];
+    strftime(formatBuffer, sizeof(formatBuffer), "%I:%M:%S %p", timeInfo);
 
-    printf("Time: %s\n", formatBuffer);
+    printf("%sOperation Time%s: %s\n", T_UNDERLINE, P_RESET, formatBuffer);
 }
 
 void fillRandomNumbers(int A[], size_t arrLen) {
-    srand(time(NULL));
+    srand(clock());
 
     for (int i = 0; i < arrLen; ++i)
         A[i] = rand() % 100;

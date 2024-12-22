@@ -8,7 +8,7 @@ int LinearSearch(const struct Array *arr, int key, int *resPtr) {
     /*
         Here is Suggestions for Improving Linear Search:
             1. Transposition (moving element i-1 index on each search)
-            2. Mo to Front (moving element to 0 index)
+            2. Move to Front (moving element to 0 index)
             3. Two Pointer Approach (in cases when chance of key on the end is same as on beginning)
      */
     int foundIdx = -1;
