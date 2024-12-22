@@ -4,11 +4,14 @@
 
 #ifndef SORTING_METHODS_H
 #define SORTING_METHODS_H
+#include <array.h>
 
 #define INSERTION_SORT 25
 #define MERGE_SORT 26
 #define QUICK_SORT 27
 #define COUNT_SORT 28
+
+void DisplaySortingMethods(struct Array *arr, int operation);
 
 // Sorting Methods
 void InsertionSort(int A[], size_t arrLen);

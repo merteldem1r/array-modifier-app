@@ -4,11 +4,14 @@
 
 #ifndef TRANSFORMATION_METHODS_H
 #define TRANSFORMATION_METHODS_H
+#include <array.h>
 
 #define REVERSE 13
 #define LEFT_SHIFT 14
 #define RIGHT_SHIFT 15
 #define ROTATE 16
+
+void DisplayTransformationMethods(const struct Array *arr, int operation);
 
 // Transformations Methods
 void Reverse(const struct Array *arr);

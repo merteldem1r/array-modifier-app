@@ -12,6 +12,8 @@
 #define MIN 22
 #define IS_SORTED 23
 
+void DisplaySearchMethods(const struct Array *arr, int operation);
+
 // Search Methods
 int LinearSearch(const struct Array *arr, int key, int *resPtr);
 

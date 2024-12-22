@@ -12,6 +12,11 @@ file(GLOB SRC
         src/*.c
         src/utils/*.c
         src/methods/*.c
+        src/methods/core/*.c
+        src/methods/sorting/*.c
+        src/methods/search/*.c
+        src/methods/statistical/*.c
+        src/methods/transformation/*.c
 )
 
 add_executable(${PROJECT_NAME} ${SRC})

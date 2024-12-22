@@ -1,8 +1,6 @@
+#include <search_methods.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#include "../include/array.h"
-#include "../include/search_methods.h"
 
 int LinearSearch(const struct Array *arr, int key, int *resPtr) {
     /*

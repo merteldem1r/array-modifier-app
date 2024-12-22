@@ -13,6 +13,8 @@
 #define GET 5
 #define SET 6
 
+void DisplayCoreMethods(struct Array *arr, int operation);
+
 // Core Methods
 void Resize(struct Array *arr);
 

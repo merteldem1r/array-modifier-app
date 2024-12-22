@@ -4,7 +4,7 @@
 
 #ifndef UTILS_H
 #define UTILS_H
-#include "array.h"
+#include <array.h>
 
 #define P_RESET "\033[0m"
 #define C_SUCCESS "\033[32m"

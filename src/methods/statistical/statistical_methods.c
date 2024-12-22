@@ -1,9 +1,6 @@
 #include <math.h>
-#include <stdio.h>
+#include <statistical_methods.h>
 #include <stdlib.h>
-
-#include "../include/array.h"
-#include "../include/statistical_methods.h"
 
 int64_t Sum(const int A[], size_t arrLen, int64_t *resPtr) {
     int sum = 0;

@@ -1,7 +1,5 @@
+#include <sorting_methods.h>
 #include <stddef.h>
-
-#include "../include/array.h"
-#include "../include/sorting_methods.h"
 
 void InsertionSort(int A[], size_t arrLen) {
     for (int i = 1; i < arrLen; i++) {

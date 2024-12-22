@@ -13,6 +13,8 @@
 #define VARIANCE 11
 #define STANDARD_DEVIATION 12
 
+void DisplayStatisticalMethods(const struct Array *arr, int operation);
+
 // Statistical Methods
 double Mean(const struct Array *arr, double *resPtr);
 

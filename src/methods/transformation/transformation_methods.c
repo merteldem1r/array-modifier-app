@@ -1,8 +1,6 @@
-#include <stdio.h>
+#include <array.h>
 #include <stdlib.h>
-
-#include "../include/array.h"
-#include "../include/utils.h"
+#include <utils.h>
 
 void Reverse(const struct Array *arr) {
     int l = 0, r = arr->length - 1;
