@@ -1,6 +1,12 @@
 #include <search_methods.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <utils.h>
+
+typedef struct {
+    int value;
+    int distance;
+} ElementDistance;
 
 int LinearSearch(const struct Array *arr, int key, int *resPtr) {
     /*
@@ -46,6 +52,36 @@ int BinarySearch(const struct Array *arr, int key, int *resPtr) {
         *resPtr = foundIdx;
 
     return foundIdx;
+}
+
+int comp(const void *a, const void *b) {
+    const ElementDistance *elemA = (ElementDistance *) a;
+    const ElementDistance *elemB = (ElementDistance *) b;
+
+    return elemA->distance - elemB->distance;
+}
+
+void FindKNearest(const struct Array *arr, int target, int k) {
+    ElementDistance *distances = (ElementDistance *) malloc(arr->length * sizeof(ElementDistance));
+
+    for (int i = 0; i < arr->length; ++i) {
+        distances[i].value = arr->A[i];
+        distances[i].distance = abs(target - arr->A[i]);
+    }
+
+    qsort(distances, arr->length, sizeof(distances[0]), comp);
+
+    printConsoleMessage(1, "");
+    printf(" The %d Nearest Elements to %d: { ", k, target);
+    for (int i = 0; i < k && i < 20 && i < arr->length; ++i) {
+        printf("%d ", distances[i].value);
+    }
+    if (k >= 15) {
+        printf(" ... ");
+    }
+    printf("}\n");
+
+    free(distances);
 }
 
 int Max(const struct Array *arr, int *resPtr) {

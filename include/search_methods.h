@@ -8,9 +8,10 @@
 
 #define LINEAR_SEARCH 19
 #define BINARY_SEARCH 20
-#define MAX 21
-#define MIN 22
-#define IS_SORTED 23
+#define K_NEAREST 21
+#define MAX 22
+#define MIN 23
+#define IS_SORTED 24
 
 void DisplaySearchMethods(const struct Array *arr, int operation);
 
@@ -18,6 +19,8 @@ void DisplaySearchMethods(const struct Array *arr, int operation);
 int LinearSearch(const struct Array *arr, int key, int *resPtr);
 
 int BinarySearch(const struct Array *arr, int key, int *resPtr);
+
+void FindKNearest(const struct Array *arr, int target, int k);
 
 int Max(const struct Array *arr, int *resPtr);
 

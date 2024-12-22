@@ -7,9 +7,11 @@
 #include <array.h>
 
 #define INSERTION_SORT 25
-#define MERGE_SORT 26
-#define QUICK_SORT 27
-#define COUNT_SORT 28
+#define SHELL_SORT 26
+#define MERGE_SORT 27
+#define QUICK_SORT 28
+#define COUNT_SORT 29
+#define HEAP_SORT 30
 
 void DisplaySortingMethods(struct Array *arr, int operation);
 

@@ -91,17 +91,17 @@ void displayOperations() {
     // Transformation
     printf("\tTransformation Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
-           "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: [EMPTY]", "18: [EMPTY]", P_RESET);
+           "13: Reverse", "14: Left Shift", "15: Right Shift", "16: Rotate", "17: Scale", "18: Normalize", P_RESET);
 
     // Search
     printf("\tSearch Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
-           "19: Linear Search", "20: Binary Search", "21: Max", "22: Min", "23: Is Sorted", "24: [EMPTY]", P_RESET);
+           "19: Linear Search", "20: Binary Search", "21: K-Nearest", "22: Max", "23: Min", "24: Is Sorted", P_RESET);
 
     // Sorting
     printf("\tSorting Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
-           "25: Insertion Sort", "26: Merge Sort", "27: Quick Sort", "28: Count Sort", "29: [EMPTY]", "30: [EMPTY]",
+           "25: Insertion Sort", "26: Shell Sort", "27: Merge Sort", "28: Quick Sort", "29: Count Sort", "30: Heap Sort",
            P_RESET);
 
     // Exit

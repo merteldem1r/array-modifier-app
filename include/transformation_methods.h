@@ -10,6 +10,8 @@
 #define LEFT_SHIFT 14
 #define RIGHT_SHIFT 15
 #define ROTATE 16
+#define SCALE 17
+#define NORMALIZE 18
 
 void DisplayTransformationMethods(const struct Array *arr, int operation);
 

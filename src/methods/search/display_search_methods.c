@@ -41,8 +41,19 @@ void DisplaySearchMethods(const struct Array *arr, int operation) {
 
             break;
         }
+        case K_NEAREST: {
+            printOperation("K-Nearest");
+            displayCurrentTime();
 
+            printf("-> Enter target number: ");
+            const int target = getIntInput(INT_MIN, INT_MAX);
 
+            printf("-> Enter how many nearest k: ");
+            const int k = getIntInput(1, arr->length);
+
+            PERFORMANCE_TEST(FindKNearest(arr, target, k), "FindKNearest");
+            break;
+        }
         case MAX: {
             printOperation("Max");
             displayCurrentTime();
