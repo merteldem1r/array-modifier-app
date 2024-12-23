@@ -2,20 +2,30 @@
 
 ## Description
 
-**The Array Modifier Console App** is a modular C project, which involves **manipulate** and **analyze** Arrays that dynamically
+**The Array Modifier Console App** is a modular C project, which involves **manipulate** and **analyze** Arrays that
+dynamically
 allocated on the Heap and **scaling the performance** of each manipulation. Users can interact with the program
 through a
-terminal; where they can perform various operations like **core, search, sorting, statistical and transformation** method analyzes on arrays.
+terminal; where they can perform various operations like **core, search, sorting, statistical and transformation**
+method analyzes on arrays.
 
 ## What is Used
 
-* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros and much more. 
+* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros and much more.
 * **CMake:** Cross-platform build automation.
 * **Git:** Version control and collaboration.
 
+## Key Features
+
+* **Dynamic Memory Management**: Allocate and manage arrays efficiently on the heap.
+* **Performance Tracking**:  Display CPU time and memory usage for each operation, compare methods.
+* **Core Operations**: Display, append, insert, delete, and update array elements.
+* **Statistical Analyse**: Compute sum, mean, median, mode, variance, and standard deviation.
+* **Transformation Tools**: Reverse, rotate, scale, and normalize arrays.
+* **Search & Sorting**: Includes linear, binary, and k-nearest searches, alongside multiple sorting algorithms
+  like Quick Sort and Heap Sort.
+
 ## App Preview
-
-
 
 ## How to Build and Run
 
@@ -56,7 +66,8 @@ terminal; where they can perform various operations like **core, search, sorting
    cmake -G "Unix Makefiles" ..  # For Makefile
    ```
 
-   Step assumes you have **CMake** and generator (Ninja, makefile etc.) installed. The ".." points to the parent directory
+   Step assumes you have **CMake** and generator (Ninja, makefile etc.) installed. The ".." points to the parent
+   directory
    where the _CMakeLists.txt_ file is
    located.
 

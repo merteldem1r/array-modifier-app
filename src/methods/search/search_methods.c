@@ -73,10 +73,10 @@ void FindKNearest(const struct Array *arr, int target, int k) {
 
     printConsoleMessage(1, "");
     printf(" The %d Nearest Elements to %d: { ", k, target);
-    for (int i = 0; i < k && i < 20 && i < arr->length; ++i) {
+    for (int i = 0; i < k  && i < 20 && i < arr->length; ++i) {
         printf("%d ", distances[i].value);
     }
-    if (k >= 15) {
+    if (k > 15) {
         printf(" ... ");
     }
     printf("}\n");
