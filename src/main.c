@@ -13,7 +13,7 @@
 int main() {
     struct Array arr;
 
-    // Initialize Array on HEAP
+    // Initialize
     printf("\nEnter %ssize%s on HEAP for an array: ", T_UNDERLINE, P_RESET);
     arr.size = getIntInput(1, INT_MAX);
 
@@ -22,7 +22,7 @@ int main() {
 
     arr.A = (int32_t *) malloc(arr.size * sizeof(int32_t));
 
-    printf("Do you want %sautomatic%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
+    printf("Do you want %sautomatically%s filled array? 1: YES 0: NO -> ", T_UNDERLINE, P_RESET);
     const int isFilled = getIntInput(0, 1);
 
     if (isFilled == 1) {
@@ -54,7 +54,7 @@ int main() {
     free(usedMemoryStr);
     Display(&arr);
 
-    // Array Manipulations
+    // Operations
     printf("\nChoose %sOperation%s on %sArray%s:\n\n", T_UNDERLINE, P_RESET, C_DATA, P_RESET);
     displayOperations();
 
@@ -63,15 +63,15 @@ int main() {
         const int operation = getIntInput(0, 30);
 
         if (operation <= 6)
-            DisplayCoreMethods(&arr, operation);
+            CoreMethodOperations(&arr, operation);
         else if (operation <= 12)
-            DisplayStatisticalMethods(&arr, operation);
+            StatisticalMethodOperations(&arr, operation);
         else if (operation <= 18)
-            DisplayTransformationMethods(&arr, operation);
+            TransformationMethodOperations(&arr, operation);
         else if (operation <= 24)
-            DisplaySearchMethods(&arr, operation);
+            SearchMethodOperations(&arr, operation);
         else if (operation <= 30)
-            DisplaySortingMethods(&arr, operation);
+            SortingMethodOperations(&arr, operation);
         else {
             free(arr.A);
             exit(1);

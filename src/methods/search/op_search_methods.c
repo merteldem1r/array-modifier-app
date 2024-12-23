@@ -4,7 +4,7 @@
 #include <time.h>
 #include <utils.h>
 
-void DisplaySearchMethods(const struct Array *arr, int operation) {
+void SearchMethodOperations(const struct Array *arr, int operation) {
     switch (operation) {
         case LINEAR_SEARCH: {
             printOperation("Linear Search");

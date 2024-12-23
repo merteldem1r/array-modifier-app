@@ -4,7 +4,7 @@
 #include <time.h>
 #include <utils.h>
 
-void DisplayCoreMethods(struct Array *arr, int operation) {
+void CoreMethodOperations(struct Array *arr, int operation) {
     switch (operation) {
         case DISPLAY:
             printOperation("Display");

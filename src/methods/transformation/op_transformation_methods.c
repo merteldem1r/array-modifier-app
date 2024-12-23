@@ -5,7 +5,7 @@
 #include <transformation_methods.h>
 #include <utils.h>
 
-void DisplayTransformationMethods(const struct Array *arr, int operation) {
+void TransformationMethodOperations(const struct Array *arr, int operation) {
     switch (operation) {
         case REVERSE: {
             printOperation("Reverse");

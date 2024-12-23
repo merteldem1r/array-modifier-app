@@ -5,7 +5,7 @@
 #include <time.h>
 #include <utils.h>
 
-void DisplayStatisticalMethods(const struct Array *arr, int operation) {
+void StatisticalMethodOperations(const struct Array *arr, int operation) {
     switch (operation) {
         case SUM: {
             printOperation("Sum");

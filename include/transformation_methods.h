@@ -13,7 +13,7 @@
 #define SCALE 17
 #define NORMALIZE 18
 
-void DisplayTransformationMethods(const struct Array *arr, int operation);
+void TransformationMethodOperations(const struct Array *arr, int operation);
 
 // Transformations Methods
 void Reverse(const struct Array *arr);

@@ -13,7 +13,7 @@
 #define MIN 23
 #define IS_SORTED 24
 
-void DisplaySearchMethods(const struct Array *arr, int operation);
+void SearchMethodOperations(const struct Array *arr, int operation);
 
 // Search Methods
 int LinearSearch(const struct Array *arr, int key, int *resPtr);

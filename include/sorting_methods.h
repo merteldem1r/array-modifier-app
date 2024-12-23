@@ -13,7 +13,7 @@
 #define COUNT_SORT 29
 #define HEAP_SORT 30
 
-void DisplaySortingMethods(struct Array *arr, int operation);
+void SortingMethodOperations(struct Array *arr, int operation);
 
 // Sorting Methods
 void InsertionSort(int A[], size_t arrLen);
