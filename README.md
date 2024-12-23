@@ -1,4 +1,6 @@
-# Array Modifier App Using C
+# Array Modifier App Console App
+
+![Array Modifier App Using](https://github.com/user-attachments/assets/3741912a-0d4e-48c8-aaec-36d66f843654)
 
 ## Description
 
@@ -15,7 +17,7 @@ terminal; where they can perform various operations like **core, search, sorting
 
 ## App Preview
 
-// image
+
 
 ## How to Build and Run
 
