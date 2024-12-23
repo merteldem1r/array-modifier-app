@@ -1,4 +1,6 @@
-![Array Modifier App Using](https://github.com/user-attachments/assets/3741912a-0d4e-48c8-aaec-36d66f843654)
+# Array Modifier Console Application
+
+![1](https://github.com/user-attachments/assets/b82b9bad-6884-4e19-ba4d-014b68b263c3)
 
 ## Description
 
@@ -29,11 +31,11 @@ method analyzes on arrays.
 
 ### Initialize 
 
-![initialize_array](https://github.com/user-attachments/assets/172b406c-ac15-4010-95cf-31368ce035ce)
+![2](https://github.com/user-attachments/assets/71c972c3-970a-46e3-8b30-b55efa1b8647)
 
 ### Operations
 
-![choose_option](https://github.com/user-attachments/assets/1b4f9d91-71c7-47d8-b5b3-7e34b998887a)
+![3](https://github.com/user-attachments/assets/e949a56e-86c4-4c7f-ac29-3ffcd262812a)
 
 ### Examples
 
