@@ -27,6 +27,18 @@ method analyzes on arrays.
 
 ## App Preview
 
+### Initialize 
+
+![initialize_array](https://github.com/user-attachments/assets/172b406c-ac15-4010-95cf-31368ce035ce)
+
+### Operations
+
+![choose_option](https://github.com/user-attachments/assets/1b4f9d91-71c7-47d8-b5b3-7e34b998887a)
+
+### Examples
+
+// Foo
+
 ## How to Build and Run
 
 * **Build Systems**: While this guide uses Ninja as an example, you can choose any build system (e.g. Makefiles or
