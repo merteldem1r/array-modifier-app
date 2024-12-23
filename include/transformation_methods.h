@@ -22,7 +22,8 @@ void LeftShift(const struct Array *arr);
 
 void RightShift(const struct Array *arr);
 
-void Rotate(const struct Array *arr, int k);
+void Rotate(const struct Array *arr, uint32_t k);
 
+void Scale(const struct Array *arr, double multiplier);
 
 #endif //TRANSFORMATION_METHODS_H

@@ -56,3 +56,8 @@ void Rotate(const struct Array *arr, uint32_t k) {
 
     free(temp);
 }
+
+void Scale(const struct Array *arr, double multiplier) {
+    for (int i = 0; i < arr->length; ++i)
+        arr->A[i] *= multiplier;
+}

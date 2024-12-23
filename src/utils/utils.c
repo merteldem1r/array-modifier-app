@@ -77,6 +77,31 @@ int32_t getIntInput(int32_t min, int32_t max) {
     return (int32_t) input;
 }
 
+double getDoubleInput(double min, double max) {
+    char inputBuffer[100];
+    const char *inputPtr = fgets(inputBuffer, sizeof(inputBuffer), stdin);
+
+    if (inputPtr == NULL) {
+        printConsoleMessage(0, "Invalid input received");
+        exit(1);
+    }
+
+    char *endPtr;
+    const double input = strtod(inputBuffer, &endPtr);
+
+    if (*endPtr != '\n' && *endPtr != '\0') {
+        printConsoleMessage(0, "Invalid input passed");
+        exit(1);
+    }
+
+    if (input < min || input > max) {
+        printConsoleMessage(0, "Input is out of the range");
+        exit(1);
+    }
+
+    return input;
+}
+
 void displayOperations() {
     // Core
     printf("\tCore Methods:\n");

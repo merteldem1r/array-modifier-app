@@ -6,13 +6,13 @@
 
 void CoreMethodOperations(struct Array *arr, int operation) {
     switch (operation) {
-        case DISPLAY:
+        case DISPLAY: {
             printOperation("Display");
             displayCurrentTime();
 
             Display(arr);
             break;
-
+        }
         case APPEND: {
             printOperation("Append");
             displayCurrentTime();

@@ -31,6 +31,8 @@
 // Utils
 int32_t getIntInput(int min, int max);
 
+double getDoubleInput(double min, double max);
+
 char *memoryUsage(uint64_t bytes);
 
 void displayOperations();

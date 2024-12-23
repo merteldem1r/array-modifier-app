@@ -46,6 +46,19 @@ void TransformationMethodOperations(const struct Array *arr, int operation) {
             Display(arr);
             break;
         }
+        case SCALE: {
+            printOperation("Scale");
+            displayCurrentTime();
+
+            printf("-> Enter scale multiplier: ");
+            const double multiplier = getDoubleInput(-1000, 1000);
+
+            PERFORMANCE_TEST(Scale(arr, multiplier), "Scale");
+            printConsoleMessage(1, "Elements scaled by: ");
+            printf("%.5f\n", multiplier);
+            Display(arr);
+            break;
+        }
         default: break;
     }
 }
