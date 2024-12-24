@@ -62,6 +62,12 @@ int main() {
         printf("\n-> ");
         const int operation = getIntInput(0, 30);
 
+        if (operation == 0) {
+            free(arr.A);
+            printConsoleMessage(1, "Array Deallocated");
+            exit(1);
+        }
+
         if (operation <= 6)
             CoreMethodOperations(&arr, operation);
         else if (operation <= 12)
@@ -72,9 +78,5 @@ int main() {
             SearchMethodOperations(&arr, operation);
         else if (operation <= 30)
             SortingMethodOperations(&arr, operation);
-        else {
-            free(arr.A);
-            exit(1);
-        }
     }
 }

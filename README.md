@@ -11,7 +11,7 @@ method analyzes on arrays.
 
 ## What is Used
 
-* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros and much more.
+* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros, error handling and much more.
 * **CMake:** Cross-platform build automation.
 * **Git:** Version control and collaboration.
 
@@ -121,6 +121,7 @@ method analyzes on arrays.
 
 ## Addable Features
 
+* Statistical graphs to compare methods using Python (coming soon)
 * Expand functionality with more advanced Algorithms
 * Supporting for file-based input and output
 * Adding unit tests for core functions
