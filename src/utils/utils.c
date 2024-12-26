@@ -6,7 +6,7 @@
 
 #include "../include/utils.h"
 
-void swap(int *x, int *y) {
+void swap(int32_t *x, int32_t *y) {
     const int temp = *x;
     *x = *y;
     *y = temp;
@@ -126,7 +126,8 @@ void displayOperations() {
     // Sorting
     printf("\tSorting Methods:\n");
     printf("    %s\t%-18s %-18s %-18s %-18s %-18s %-18s%s\n", C_OPTION,
-           "25: Insertion Sort", "26: Shell Sort", "27: Merge Sort", "28: Quick Sort", "29: Count Sort", "30: Heap Sort",
+           "25: Insertion Sort", "26: Shell Sort", "27: Merge Sort", "28: Quick Sort", "29: Count Sort",
+           "30: Heap Sort",
            P_RESET);
 
     // Exit
@@ -164,11 +165,9 @@ void displayCurrentTime() {
     printf("%sOperation Time%s: %s\n", T_UNDERLINE, P_RESET, formatBuffer);
 }
 
-void fillRandomNumbers(int A[], size_t arrLen) {
-    srand(clock());
-
-    for (int i = 0; i < arrLen; ++i)
-        A[i] = rand() % 100;
+void fillRandomNumbers(int A[], size_t arrLen, int32_t min, int32_t max) {
+    for (size_t i = 0; i < arrLen; ++i)
+        A[i] = min + rand() % (max - min + 1);
 }
 
 void fillSortedNumbers(int A[], size_t arrLen) {

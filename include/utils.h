@@ -45,7 +45,7 @@ void displayCurrentTime();
 
 void swap(int *x, int *y);
 
-void fillRandomNumbers(int A[], size_t arrLen);
+void fillRandomNumbers(int A[], size_t arrLen, int32_t min, int32_t max);
 
 void fillSortedNumbers(int A[], size_t arrLen);
 

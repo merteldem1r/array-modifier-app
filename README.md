@@ -20,7 +20,7 @@ method analyzes on arrays.
 ## Key Features
 
 * **Dynamic Memory Management**: Allocate and manage arrays efficiently on the heap.
-* **Performance Tracking**:  Display CPU time and memory usage for each operation, compare methods.
+* **Performance Tracking**:  Display CPU time and memory usage for operations, compare methods.
 * **Core Operations**: Display, append, insert, delete, and update array elements.
 * **Statistical Analyse**: Compute sum, mean, median, mode, variance, and standard deviation.
 * **Transformation Tools**: Reverse, rotate, scale, and normalize arrays.
@@ -51,7 +51,7 @@ method analyzes on arrays.
 
 1. **Prerequisites for Project**
 
-   Install necessary build tools and compilers on your syste:
+   Install necessary build tools and compilers on your system:
     * C compiler: GCC, Clang, or MSVC, depending on your operating system.
     * Cmake: Build automation tool. Download from [cmake/download](https://cmake.org/download/)
 

@@ -1,6 +1,7 @@
 #include <core_methods.h>
 #include <sorting_methods.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include <utils.h>
 
@@ -19,6 +20,11 @@ void SortingMethodOperations(const struct Array *arr, int operation) {
             printSortedArray(arr);
             break;
         case SHELL_SORT:
+            printOperation("Shell Sort");
+            displayCurrentTime();
+
+            PERFORMANCE_TEST(ShellSort(arr->A, arr->length), "ShellSort");
+            printSortedArray(arr);
             break;
         case MERGE_SORT:
             printOperation("Merge Sort");
@@ -28,6 +34,11 @@ void SortingMethodOperations(const struct Array *arr, int operation) {
             printSortedArray(arr);
             break;
         case QUICK_SORT:
+            printOperation("Quick Sort");
+            displayCurrentTime();
+
+            PERFORMANCE_TEST(QuickSort(arr->A, 0, arr->length - 1), "QuickSort");
+            printSortedArray(arr);
             break;
         case HEAP_SORT:
             break;

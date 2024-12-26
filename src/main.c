@@ -11,6 +11,7 @@
 #include <utils.h>
 
 int main() {
+    srand(clock());
     struct Array arr;
 
     // Initialize
@@ -29,11 +30,20 @@ int main() {
         printf("Do you want %srandom%s or %ssorted%s array? 1: Random 0: Sorted -> ", T_UNDERLINE, P_RESET, T_UNDERLINE,
                P_RESET);
         const int isRandom = getIntInput(0, 1);
-        printf("\n");
 
         if (isRandom == 1) {
-            PERFORMANCE_TEST(fillRandomNumbers(arr.A, arr.length), "fillRandomNumbers");
+            printf("Enter %srange%s (min - max) of values in array: \n", T_UNDERLINE, P_RESET);
+
+            printf("\tEnter min value -> ");
+            const int32_t randomMin = getIntInput(-1000, 1000);
+
+            printf("\tEnter max value -> ");
+            const int32_t randomMax = getIntInput(randomMin + 1, 1000);
+
+            printf("\n");
+            PERFORMANCE_TEST(fillRandomNumbers(arr.A, arr.length, randomMin, randomMax), "fillRandomNumbers");
         } else {
+            printf("\n");
             PERFORMANCE_TEST(fillSortedNumbers(arr.A, arr.length), "fillSortedNumbers");
         }
     } else if (isFilled == 0) {
@@ -42,6 +52,7 @@ int main() {
             printf("\tElement %d: ", i + 1);
             arr.A[i] = getIntInput(INT_MIN, INT_MAX);
         }
+        printf("\n");
     } else {
         printConsoleMessage(0, "Invalid input passed");
         return -1;
