@@ -31,15 +31,17 @@ method analyzes on arrays.
 
 ### Initialize 
 
-![2](https://github.com/user-attachments/assets/71c972c3-970a-46e3-8b30-b55efa1b8647)
+![initialize](https://github.com/user-attachments/assets/36844e51-0bc3-486f-beeb-a8f31842086e)
 
-### Operations
+### Methods
 
-![3](https://github.com/user-attachments/assets/e949a56e-86c4-4c7f-ac29-3ffcd262812a)
+![methods](https://github.com/user-attachments/assets/09ece4b4-b735-4278-9471-887ee331bd8e)
 
 ### Examples
 
-// Foo
+![search_sort](https://github.com/user-attachments/assets/d7e7ff5e-810b-4279-93c7-51b5baf7f673)
+
+![trans_stat](https://github.com/user-attachments/assets/dd7abd8c-3093-4152-9aea-1019db36604f)
 
 ## How to Build and Run
 
