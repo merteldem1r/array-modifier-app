@@ -31,15 +31,15 @@ method analyzes on arrays.
 
 ## App Preview
 
-### Initialize 
+### Initializing 
 
 ![initialize](https://github.com/user-attachments/assets/36844e51-0bc3-486f-beeb-a8f31842086e)
 
-### Methods
+### Array Methods
 
 ![methods](https://github.com/user-attachments/assets/09ece4b4-b735-4278-9471-887ee331bd8e)
 
-### Examples
+### Few Examples
 
 ![stats](https://github.com/user-attachments/assets/cfff6087-7f79-43cf-9501-821eb853ad1a)
 
