@@ -41,9 +41,13 @@ method analyzes on arrays.
 
 ### Examples
 
-![search_sort](https://github.com/user-attachments/assets/d7e7ff5e-810b-4279-93c7-51b5baf7f673)
+![stats](https://github.com/user-attachments/assets/cfff6087-7f79-43cf-9501-821eb853ad1a)
 
-![trans_stat](https://github.com/user-attachments/assets/dd7abd8c-3093-4152-9aea-1019db36604f)
+![searching](https://github.com/user-attachments/assets/ae4cc882-de99-4e5c-afd4-d936ab8189ba)
+
+![sorting](https://github.com/user-attachments/assets/4cbc656e-433f-474e-94fd-e67070398107)
+
+![transformation](https://github.com/user-attachments/assets/843620f5-01e3-422d-a9b5-58a0ad61b6d2)
 
 ## How to Build and Run
 
