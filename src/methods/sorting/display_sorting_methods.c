@@ -41,6 +41,11 @@ void SortingMethodOperations(const struct Array *arr, int operation) {
             printSortedArray(arr);
             break;
         case HEAP_SORT:
+            printOperation("Heap Sort");
+            displayCurrentTime();
+
+            PERFORMANCE_TEST(HeapSort(arr->A, arr->length), "Heap Sort");
+            printSortedArray(arr);
             break;
         default: break;
     }

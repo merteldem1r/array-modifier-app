@@ -50,6 +50,12 @@ void StatisticalMethodOperations(const struct Array *arr, int operation) {
             printOperation("Mode");
             displayCurrentTime();
 
+            int resPtr = 0;
+
+            PERFORMANCE_TEST(Mode(arr->A, arr->size, &resPtr), "Mode");
+            printConsoleMessage(1, "Mode of the array (array is sorted now): ");
+            printf("%d", resPtr);
+
             break;
         }
         case VARIANCE: {

@@ -22,7 +22,7 @@ int64_t Sum(const int A[], size_t arrLen, int64_t *resPtr);
 
 double Median(const struct Array *arr, double *resPtr);
 
-int Mode(const struct Array *arr, int *resPtr);
+int Mode(int A[], int arrLen, int *resPtr);
 
 double Variance(const struct Array *arr, double *resPtr);
 

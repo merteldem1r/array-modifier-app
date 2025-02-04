@@ -41,19 +41,40 @@ double Median(const struct Array *arr, double *resPtr) {
     return median;
 }
 
-// int Mode(const struct Array *arr, int *resPtr) {
-//     int mode = NAN;
-//     int freqArr[arr->length];
-//
-//     for (int i = 0; i < arr->length; ++i) {
-//         if ()
-//     }
-//
-//     if (resPtr != NULL)
-//         *resPtr = mode;
-//
-//     return mode;
-// }
+int compare(const void *a, const void *b) {
+    return (*(int *) a - *(int *) b);
+}
+
+int Mode(int A[], int arrLen, int *resPtr) {
+    qsort(A, arrLen, sizeof(int), compare);
+
+    // {1,2,2,2,3,3,5,5,5,5}
+    int mode = A[0];
+    int currentCount = 1;
+    int maxCount = 1;
+
+    for (int i = 1; i < arrLen; ++i) {
+        if (A[i] == A[i - 1]) {
+            ++currentCount;
+        } else {
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                mode = A[i - 1];
+            }
+
+            currentCount = 1;
+        }
+    }
+
+    if (currentCount > maxCount) {
+        mode = A[arrLen - 1];
+    }
+
+    if (resPtr != NULL)
+        *resPtr = mode;
+
+    return mode;
+}
 
 double Variance(const struct Array *arr, double *resPtr) {
     double variance = 0;

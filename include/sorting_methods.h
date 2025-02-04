@@ -24,5 +24,7 @@ void MergeSort(int A[], int32_t low, int32_t high);
 
 void QuickSort(int A[], int32_t low, int32_t high);
 
+void HeapSort(int A[], int32_t arrLen);
+
 
 #endif //SORTING_METHODS_H
