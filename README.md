@@ -11,8 +11,6 @@ through a
 terminal; where they can perform various operations like **core, search, sorting, statistical and transformation**
 method analyzes on arrays.
 
-**NOTE**: Implementing some methods still in progress...
-
 ## What is Used
 
 * **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros, error handling and much more.
