@@ -5,6 +5,7 @@
 #ifndef SORTING_METHODS_H
 #define SORTING_METHODS_H
 #include <array.h>
+#include <stddef.h>
 
 #define INSERTION_SORT 25
 #define SHELL_SORT 26

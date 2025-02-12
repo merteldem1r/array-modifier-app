@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <search_methods.h>
 #include <stdio.h>
 #include <stdlib.h>

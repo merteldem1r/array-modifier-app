@@ -1,5 +1,6 @@
 #include <array.h>
 #include <core_methods.h>
+#include <limits.h>
 #include <math.h>
 #include <search_methods.h>
 #include <sorting_methods.h>

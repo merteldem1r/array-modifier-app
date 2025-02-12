@@ -12,6 +12,7 @@
 #define MODE 10
 #define VARIANCE 11
 #define STANDARD_DEVIATION 12
+#include <stddef.h>
 
 void StatisticalMethodOperations(const struct Array *arr, int operation);
 
