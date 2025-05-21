@@ -1,7 +1,5 @@
 # Array Modifier Console Application
 
-![1](https://github.com/user-attachments/assets/b82b9bad-6884-4e19-ba4d-014b68b263c3)
-
 ## Description
 
 **The Array Modifier Console App** is a modular C project, which involves **manipulate** and **analyze** Arrays that
