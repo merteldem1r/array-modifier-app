@@ -9,22 +9,6 @@ through a
 terminal; where they can perform various operations like **core, search, sorting, statistical and transformation**
 method analyzes on arrays.
 
-## What is Used
-
-* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros, error handling and much more.
-* **CMake:** Cross-platform build automation.
-* **Git:** Version control and collaboration.
-
-## Key Features
-
-* **Dynamic Memory Management**: Allocate and manage arrays efficiently on the heap.
-* **Performance Tracking**:  Display CPU time and memory usage for operations, compare methods.
-* **Core Operations**: Display, append, insert, delete, and update array elements.
-* **Statistical Analyse**: Compute sum, mean, median, mode, variance, and standard deviation.
-* **Transformation Tools**: Reverse, rotate, scale, and normalize arrays.
-* **Search & Sorting**: Includes linear, binary, and k-nearest searches, alongside multiple sorting algorithms
-  like Quick Sort and Heap Sort.
-
 ## App Preview
 
 ### Initializing 
@@ -44,6 +28,23 @@ method analyzes on arrays.
 ![sorting](https://github.com/user-attachments/assets/4cbc656e-433f-474e-94fd-e67070398107)
 
 ![transformation](https://github.com/user-attachments/assets/843620f5-01e3-422d-a9b5-58a0ad61b6d2)
+
+## What is Used
+
+* **C Language:** Functionality and manipulation methods. Modularity, data-structures, pointers, macros, error handling and much more.
+* **CMake:** Cross-platform build automation.
+* **Git:** Version control and collaboration.
+
+## Key Features
+
+* **Dynamic Memory Management**: Allocate and manage arrays efficiently on the heap.
+* **Performance Tracking**:  Display CPU time and memory usage for operations, compare methods.
+* **Core Operations**: Display, append, insert, delete, and update array elements.
+* **Statistical Analyse**: Compute sum, mean, median, mode, variance, and standard deviation.
+* **Transformation Tools**: Reverse, rotate, scale, and normalize arrays.
+* **Search & Sorting**: Includes linear, binary, and k-nearest searches, alongside multiple sorting algorithms
+  like Quick Sort and Heap Sort.
+
 
 ## How to Build and Run
 
