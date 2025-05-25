@@ -123,10 +123,3 @@ method analyzes on arrays.
       ```
       cmake --build . --target clean_all
       ```
-
-## Addable Features
-
-* Statistical graphs to compare methods using Python (coming soon)
-* Expand functionality with more advanced Algorithms
-* Supporting for file-based input and output
-* Adding unit tests for core functions
