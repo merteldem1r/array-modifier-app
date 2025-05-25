@@ -1,7 +1,5 @@
 # Array Modifier Console Application
 
-## Description
-
 **The Array Modifier Console App** is a modular C project, which involves **manipulate** and **analyze** Arrays that
 dynamically
 allocated on the Heap and **scaling the performance** of each manipulation. Users can interact with the program
